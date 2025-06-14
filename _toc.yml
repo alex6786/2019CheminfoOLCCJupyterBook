@@ -1,9 +1,31 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
+- header: 2019 Cheminformatics OLCC
 
-format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- divider: true
+
+- header: Contents
+
+- url: /features/lecture01
+  not numbered: true
+
+- url: /features/lecture02
+  not numbered: true
+
+- url: /features/lecture03
+  not numbered: true
+
+- url: /features/lecture04
+  not numbered: true
+
+- url: /features/lecture05
+  not numbered: true 
+
+- url: /features/lecture06
+  not numbered: true
+
+- url: /features/lecture07
+  not numbered: true
+
+- url: /features/lecture08
+  not numbered: true
+
+- divider: true  
