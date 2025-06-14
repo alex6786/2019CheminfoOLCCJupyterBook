@@ -1,31 +1,11 @@
-- header: 2019 Cheminformatics OLCC
-
-- divider: true
-
-- header: Contents
-
-- url: /features/lecture01
-  not numbered: true
-
-- url: /features/lecture02
-  not numbered: true
-
-- url: /features/lecture03
-  not numbered: true
-
-- url: /features/lecture04
-  not numbered: true
-
-- url: /features/lecture05
-  not numbered: true 
-
-- url: /features/lecture06
-  not numbered: true
-
-- url: /features/lecture07
-  not numbered: true
-
-- url: /features/lecture08
-  not numbered: true
-
-- divider: true  
+format: jb-book
+root: intro
+chapters:
+- file: lecture01
+#- file: /content/features/lecture02
+#- file: /content/features/lecture03
+#- file: /content/features/lecture04
+#- file: /content/features/lecture05
+#- file: /content/features/lecture06
+#- file: /content/features/lecture07
+#- file: /content/features/lecture08
