@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Chemical Structure Inputs for PUG-REST &#8212; 2019 Cheminformatics OLCC</title>
+    <title>2. Chemical Structure Inputs for PUG-REST &#8212; 2019 Cheminformatics OLCC</title>
   
   
   
@@ -60,6 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture02';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Intercoversion between PubChem records." href="lecture03.html" />
+    <link rel="prev" title="1. Getting Molecular Properties through PUG-REST" href="content/lecture01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -169,16 +169,20 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Intro
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture01.html">Getting Molecular Properties through PUG-REST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture03.html">Intercoversion between PubChem records.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture04.html">Compound vs Substance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture05.html">Structure Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture06.html">Molecular Similarity</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="content/lecture01.html">1. Getting Molecular Properties through PUG-REST</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture03.html">3. Intercoversion between PubChem records.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture04.html">4. Compound vs Substance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture05.html">5. Structure Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture06.html">6. Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture08.html">7. Machine Learning Basics</a></li>
+
+
 </ul>
 
     </div>
@@ -327,15 +331,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-get-method">1. Using the HTTP GET method.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-in-the-url-path">1-(1) Structure encoded in the URL path.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-as-a-url-argument">1-(2) Structure encoded as a URL argument</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-passed-in-a-dictionary">1-(3) Structure passed in a dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-post-method">2. Using the HTTP POST method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-http-post-and-get">2-(1) Comparison of HTTP POST and GET</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-multi-line-structure-input">2-(2) HTTP POST for multi-line structure input</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-sdf-file-input">2-(3) HTTP POST for SDF file input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">2.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-get-method">2.2. 1. Using the HTTP GET method.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-in-the-url-path">2.3. 1-(1) Structure encoded in the URL path.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-as-a-url-argument">2.4. 1-(2) Structure encoded as a URL argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-passed-in-a-dictionary">2.5. 1-(3) Structure passed in a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-post-method">2.6. 2. Using the HTTP POST method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-http-post-and-get">2.7. 2-(1) Comparison of HTTP POST and GET</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-multi-line-structure-input">2.8. 2-(2) HTTP POST for multi-line structure input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-sdf-file-input">2.9. 2-(3) HTTP POST for SDF file input</a></li>
 </ul>
             </nav>
         </div>
@@ -348,9 +352,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chemical-structure-inputs-for-pug-rest">
-<h1>Chemical Structure Inputs for PUG-REST<a class="headerlink" href="#chemical-structure-inputs-for-pug-rest" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>Chemical Structure Inputs for PUG-REST<a class="headerlink" href="#chemical-structure-inputs-for-pug-rest" title="Link to this heading">#</a></h1>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Use SMILES and InChI strings to specify the input compound for a PUG-REST request.</p></li>
 <li><p>Use a structure-data (SD) file to specify the input compound for a PUG-REST request.</p></li>
@@ -380,10 +384,10 @@ To learn how to specify the structure input in a PUG-REST request, one needs to 
 </div>
 </section>
 <section id="using-the-http-get-method">
-<h2>1. Using the HTTP GET method.<a class="headerlink" href="#using-the-http-get-method" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>1. Using the HTTP GET method.<a class="headerlink" href="#using-the-http-get-method" title="Link to this heading">#</a></h2>
 </section>
 <section id="structure-encoded-in-the-url-path">
-<h2>1-(1) Structure encoded in the URL path.<a class="headerlink" href="#structure-encoded-in-the-url-path" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>1-(1) Structure encoded in the URL path.<a class="headerlink" href="#structure-encoded-in-the-url-path" title="Link to this heading">#</a></h2>
 <p>In some cases, you can encode a chemical structure in the PUG-REST request URL path as in the following example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -450,7 +454,7 @@ Detail:
 <p><br>Note in the above example that the SMILES string contains special characters. In this case a forward slash (“/”), which is also used in the URL path.  These special characters conflict with the PUG-REST request URL syntax, causing an error when used in the PUG-REST request URL.</p>
 </section>
 <section id="structure-encoded-as-a-url-argument">
-<h2>1-(2) Structure encoded as a URL argument<a class="headerlink" href="#structure-encoded-as-a-url-argument" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>1-(2) Structure encoded as a URL argument<a class="headerlink" href="#structure-encoded-as-a-url-argument" title="Link to this heading">#</a></h2>
 <p>To circumvent the issue mentioned above, the SMILES string may be encoded as the URL argments (as an optional parameter followed by the “?” character).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -472,7 +476,7 @@ Detail:
 </div>
 </section>
 <section id="structure-passed-in-a-dictionary">
-<h2>1-(3) Structure passed in a dictionary<a class="headerlink" href="#structure-passed-in-a-dictionary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>1-(3) Structure passed in a dictionary<a class="headerlink" href="#structure-passed-in-a-dictionary" title="Link to this heading">#</a></h2>
 <p>It is also possible to pass the structure query as a key-value pair in a dictionary.  The following example does the same task as the previous example does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -542,10 +546,10 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/txt?smiles=CC1%3D
 </div>
 </section>
 <section id="using-the-http-post-method">
-<h2>2. Using the HTTP POST method<a class="headerlink" href="#using-the-http-post-method" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>2. Using the HTTP POST method<a class="headerlink" href="#using-the-http-post-method" title="Link to this heading">#</a></h2>
 </section>
 <section id="comparison-of-http-post-and-get">
-<h2>2-(1) Comparison of HTTP POST and GET<a class="headerlink" href="#comparison-of-http-post-and-get" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>2-(1) Comparison of HTTP POST and GET<a class="headerlink" href="#comparison-of-http-post-and-get" title="Link to this heading">#</a></h2>
 <p>All the three examples above use the HTTP GET method, as implied in the use of “requests.get()”.  Alternatively, one can use the HTTP POST method.  For example, the following example returns the identical result as the last two HTTP GET examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -584,7 +588,7 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/txt?smiles=CC1%3D
 <p>Note that the first one passes the input SMILES string as a parameter, while the second one passes it as data.  Because of this, the URL stored in the “res.url” variable in the second code does not contain structure informaion.</p>
 </section>
 <section id="http-post-for-multi-line-structure-input">
-<h2>2-(2) HTTP POST for multi-line structure input<a class="headerlink" href="#http-post-for-multi-line-structure-input" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.8. </span>2-(2) HTTP POST for multi-line structure input<a class="headerlink" href="#http-post-for-multi-line-structure-input" title="Link to this heading">#</a></h2>
 <p>The HTTP POST method should be used if the input molecular structure for PUG-REST request span over multiple lines (e.g., stored in a structure-data file (SDF) format).  The SDF file contains structure information of a molecule in a multi-line format, along with other data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -676,7 +680,7 @@ https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/txt?smiles=CC1%3D
 </div>
 </section>
 <section id="http-post-for-sdf-file-input">
-<h2>2-(3) HTTP POST for SDF file input<a class="headerlink" href="#http-post-for-sdf-file-input" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.9. </span>2-(3) HTTP POST for SDF file input<a class="headerlink" href="#http-post-for-sdf-file-input" title="Link to this heading">#</a></h2>
 <p>One may want to use the structure stored in a file as the input for a PUG-REST request.  The following code shows how to read an SDF file into a variable.  This code cell assumes that the ‘Structure2D_CID_5288826.sdf’ file is in the current directory.  The file can be downloaded from the <strong>Chapter 2 Assignments</strong> page.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1125,6 +1129,24 @@ Morphine;4-methyl-(1S,5R,13R,14S,17R)-12-oxa-4-azapentacyclo[9.6.1.01,13.05,17.0
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="content/lecture01.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Getting Molecular Properties through PUG-REST</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lecture03.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Intercoversion between PubChem records.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1141,15 +1163,15 @@ Morphine;4-methyl-(1S,5R,13R,14S,17R)-12-oxa-4-azapentacyclo[9.6.1.01,13.05,17.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-get-method">1. Using the HTTP GET method.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-in-the-url-path">1-(1) Structure encoded in the URL path.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-as-a-url-argument">1-(2) Structure encoded as a URL argument</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-passed-in-a-dictionary">1-(3) Structure passed in a dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-post-method">2. Using the HTTP POST method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-http-post-and-get">2-(1) Comparison of HTTP POST and GET</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-multi-line-structure-input">2-(2) HTTP POST for multi-line structure input</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-sdf-file-input">2-(3) HTTP POST for SDF file input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">2.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-get-method">2.2. 1. Using the HTTP GET method.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-in-the-url-path">2.3. 1-(1) Structure encoded in the URL path.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-as-a-url-argument">2.4. 1-(2) Structure encoded as a URL argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-passed-in-a-dictionary">2.5. 1-(3) Structure passed in a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-post-method">2.6. 2. Using the HTTP POST method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-http-post-and-get">2.7. 2-(1) Comparison of HTTP POST and GET</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-multi-line-structure-input">2.8. 2-(2) HTTP POST for multi-line structure input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-sdf-file-input">2.9. 2-(3) HTTP POST for SDF file input</a></li>
 </ul>
   </nav></div>
 

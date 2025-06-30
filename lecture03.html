@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Intercoversion between PubChem records. &#8212; 2019 Cheminformatics OLCC</title>
+    <title>3. Intercoversion between PubChem records. &#8212; 2019 Cheminformatics OLCC</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture03';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Compound vs Substance" href="lecture04.html" />
-    <link rel="prev" title="Getting Molecular Properties through PUG-REST" href="lecture01.html" />
+    <link rel="next" title="4. Compound vs Substance" href="lecture04.html" />
+    <link rel="prev" title="2. Chemical Structure Inputs for PUG-REST" href="lecture02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,16 +169,20 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Intro
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture01.html">Getting Molecular Properties through PUG-REST</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intercoversion between PubChem records.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture04.html">Compound vs Substance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture05.html">Structure Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture06.html">Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/lecture01.html">1. Getting Molecular Properties through PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture02.html">2. Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Intercoversion between PubChem records.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture04.html">4. Compound vs Substance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture05.html">5. Structure Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture06.html">6. Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture08.html">7. Machine Learning Basics</a></li>
+
+
 </ul>
 
     </div>
@@ -327,9 +331,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-depositor-provided-records-for-a-given-compound">1. Getting depositor-provided records for a given compound</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-mixture-component-molecules-for-a-given-molecule">2. Getting mixture/component molecules for a given molecule.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-compounds-tested-in-a-given-assay">3. Getting compounds tested in a given assay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-depositor-provided-records-for-a-given-compound">3.1. 1. Getting depositor-provided records for a given compound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-mixture-component-molecules-for-a-given-molecule">3.2. 2. Getting mixture/component molecules for a given molecule.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-compounds-tested-in-a-given-assay">3.3. 3. Getting compounds tested in a given assay</a></li>
 </ul>
             </nav>
         </div>
@@ -342,7 +346,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="intercoversion-between-pubchem-records">
-<h1>Intercoversion between PubChem records.<a class="headerlink" href="#intercoversion-between-pubchem-records" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Intercoversion between PubChem records.<a class="headerlink" href="#intercoversion-between-pubchem-records" title="Link to this heading">#</a></h1>
 <p>PUG-REST can be used to retrieve PubChem records related to another PubChem records.  Basically, PUG-REST takes an input list of records in one of the three PubChem databases (Compound, Substance, and BioAssay) and returns a list of the related records in the same or different database.  Here, the meaning of the relationship between the input and output records may be specified using an optional parameter.  This allows one to do various tasks, including (but not limited to):<br></p>
 <ul class="simple">
 <li><p>Depositor-provided records (i.e., substances) that are standardized to a given compound.</p></li>
@@ -352,7 +356,7 @@ document.write(`
 <li><p>Compounds that have similar structures to a given compound.</p></li>
 </ul>
 <section id="getting-depositor-provided-records-for-a-given-compound">
-<h2>1. Getting depositor-provided records for a given compound<a class="headerlink" href="#getting-depositor-provided-records-for-a-given-compound" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>1. Getting depositor-provided records for a given compound<a class="headerlink" href="#getting-depositor-provided-records-for-a-given-compound" title="Link to this heading">#</a></h2>
 <p>First let’s import the requests package necessary to make a web service request.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -541,7 +545,7 @@ document.write(`
 </div>
 </section>
 <section id="getting-mixture-component-molecules-for-a-given-molecule">
-<h2>2. Getting mixture/component molecules for a given molecule.<a class="headerlink" href="#getting-mixture-component-molecules-for-a-given-molecule" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>2. Getting mixture/component molecules for a given molecule.<a class="headerlink" href="#getting-mixture-component-molecules-for-a-given-molecule" title="Link to this heading">#</a></h2>
 <p>The list interconversion may be used to retrieve mixtures that contain a given molecule as a component.  To do this, the input molecule should be a single-component compound (that is, with only one covalently-bound unit), and the optional parameter “<strong>cids_type=component</strong>” should be provided.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -615,7 +619,7 @@ Number of Components 2
 </div>
 </section>
 <section id="getting-compounds-tested-in-a-given-assay">
-<h2>3. Getting compounds tested in a given assay<a class="headerlink" href="#getting-compounds-tested-in-a-given-assay" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>3. Getting compounds tested in a given assay<a class="headerlink" href="#getting-compounds-tested-in-a-given-assay" title="Link to this heading">#</a></h2>
 <p>PUG-REST may be used to retrieve compounds tested in a given assay.  For example, the following code cell shows how to get all compounds tested in AID 1207599.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -715,12 +719,12 @@ Number of Components 2
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="lecture01.html"
+       href="lecture02.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Getting Molecular Properties through PUG-REST</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Chemical Structure Inputs for PUG-REST</p>
       </div>
     </a>
     <a class="right-next"
@@ -728,7 +732,7 @@ Number of Components 2
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Compound vs Substance</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Compound vs Substance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -748,9 +752,9 @@ Number of Components 2
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-depositor-provided-records-for-a-given-compound">1. Getting depositor-provided records for a given compound</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-mixture-component-molecules-for-a-given-molecule">2. Getting mixture/component molecules for a given molecule.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-compounds-tested-in-a-given-assay">3. Getting compounds tested in a given assay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-depositor-provided-records-for-a-given-compound">3.1. 1. Getting depositor-provided records for a given compound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-mixture-component-molecules-for-a-given-molecule">3.2. 2. Getting mixture/component molecules for a given molecule.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-compounds-tested-in-a-given-assay">3.3. 3. Getting compounds tested in a given assay</a></li>
 </ul>
   </nav></div>
 

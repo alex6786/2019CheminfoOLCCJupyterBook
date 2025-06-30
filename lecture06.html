@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Molecular Similarity &#8212; 2019 Cheminformatics OLCC</title>
+    <title>6. Molecular Similarity &#8212; 2019 Cheminformatics OLCC</title>
   
   
   
@@ -60,7 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture06';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Structure Search" href="lecture05.html" />
+    <link rel="next" title="7. Machine Learning Basics" href="lecture08.html" />
+    <link rel="prev" title="5. Structure Search" href="lecture05.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,16 +169,20 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Intro
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture01.html">Getting Molecular Properties through PUG-REST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture03.html">Intercoversion between PubChem records.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture04.html">Compound vs Substance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture05.html">Structure Search</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/lecture01.html">1. Getting Molecular Properties through PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture02.html">2. Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture03.html">3. Intercoversion between PubChem records.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture04.html">4. Compound vs Substance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture05.html">5. Structure Search</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture08.html">7. Machine Learning Basics</a></li>
+
+
 </ul>
 
     </div>
@@ -326,16 +331,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fingerprint-generation">1. Fingerprint Generation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maccs-keys">1-(1) MACCS keys</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circular-fingerprints">1-(2) Circular Fingerprints</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-based-fingeprints">1-(3) Path-Based Fingeprints</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-fingerprint">1-(4) PubChem Fingerprint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">6.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fingerprint-generation">6.2. 1. Fingerprint Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maccs-keys">6.2.1. 1-(1) MACCS keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circular-fingerprints">6.2.2. 1-(2) Circular Fingerprints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-based-fingeprints">6.2.3. 1-(3) Path-Based Fingeprints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-fingerprint">6.2.4. 1-(4) PubChem Fingerprint</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-similarity-scores">2. Computation of similarity scores</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-similarity-scores">3. Interpretation of similarity scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-similarity-scores">6.3. 2. Computation of similarity scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-similarity-scores">6.4. 3. Interpretation of similarity scores</a></li>
 </ul>
             </nav>
         </div>
@@ -348,9 +353,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="molecular-similarity">
-<h1>Molecular Similarity<a class="headerlink" href="#molecular-similarity" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Molecular Similarity<a class="headerlink" href="#molecular-similarity" title="Link to this heading">#</a></h1>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Generete molecular fingerprints for a given molecule.</p></li>
 <li><p>Evaluate structural similarity between molecules using different molecular fingerpints and similarity metrics.</p></li>
@@ -368,7 +373,7 @@ document.write(`
 </ul>
 </section>
 <section id="fingerprint-generation">
-<h2>1. Fingerprint Generation<a class="headerlink" href="#fingerprint-generation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>1. Fingerprint Generation<a class="headerlink" href="#fingerprint-generation" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
@@ -394,7 +399,7 @@ document.write(`
 </div>
 </div>
 <section id="maccs-keys">
-<h3>1-(1) MACCS keys<a class="headerlink" href="#maccs-keys" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.1. </span>1-(1) MACCS keys<a class="headerlink" href="#maccs-keys" title="Link to this heading">#</a></h3>
 <p>The MACCS key is a binary fingerprint (a string of 0’s and 1’s).  Each bit position represents the presence (=1) or absence (=0) of a pre-defined structural feature.  The feature definitions for the MACCS keys are available at:<br> <a class="github reference external" href="https://github.com/rdkit/rdkit/blob/master/rdkit/Chem/MACCSkeys.py">rdkit/rdkit</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -477,7 +482,7 @@ b&#39;\xe0\xff\xff\xff\xa7\x00\x00\x00&gt;\x00\x00\x00T\x14\x10\x04\x10\x00\x08\
 <p><br><strong>Write the fragment definition of the bits ON</strong> (one is already provided for you as an example).</p>
 </section>
 <section id="circular-fingerprints">
-<h3>1-(2) Circular Fingerprints<a class="headerlink" href="#circular-fingerprints" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2. </span>1-(2) Circular Fingerprints<a class="headerlink" href="#circular-fingerprints" title="Link to this heading">#</a></h3>
 <p>Circular fingerprints are hashed fingerprints.  They are generated by exhaustively enumerating “circular” fragments (containing all atoms within a given radius from each heavy atom of the molecule) and then hashing these fragments into a fixed-length bitstring.  (Here, the “radius” from an atom is measured by the number of bonds that separates two atoms).</p>
 <p>Examples of circular fingerprints are the extended-connectivity fingerprint (ECFPs) and their variant called FCFPs (Functional-Class Fingerprints), originally described in a paper by Rogers and Hahn (<a class="reference external" href="https://doi.org/10.1021/ci100050t">https://doi.org/10.1021/ci100050t</a>).  The RDKit implementation of these fingerprints are called “Morgan Fingerprints” (<a class="reference external" href="https://www.rdkit.org/docs/GettingStartedInPython.html#morgan-fingerprints-circular-fingerprints">https://www.rdkit.org/docs/GettingStartedInPython.html#morgan-fingerprints-circular-fingerprints</a>).</p>
 <div class="cell docutils container">
@@ -518,7 +523,7 @@ b&#39;\xe0\xff\xff\xff\xa7\x00\x00\x00&gt;\x00\x00\x00T\x14\x10\x04\x10\x00\x08\
 </div>
 </section>
 <section id="path-based-fingeprints">
-<h3>1-(3) Path-Based Fingeprints<a class="headerlink" href="#path-based-fingeprints" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3. </span>1-(3) Path-Based Fingeprints<a class="headerlink" href="#path-based-fingeprints" title="Link to this heading">#</a></h3>
 <p>Path-based fingerprints are also hashed fingerprints.  They are generated by enumerating linear fragments of a given length and hashing them into a fixed-length bitstring.  An example is the RDKit’s topological fingeprint.  As described in the RDK documentation (<a class="reference external" href="https://www.rdkit.org/docs/GettingStartedInPython.html#topological-fingerprints">https://www.rdkit.org/docs/GettingStartedInPython.html#topological-fingerprints</a>), while this fingerprint can be generated using FingerprintMols.FingerprintMol(), it is recommended to use rdmolops.RDKFingerprint() to generate the fingerprint using non-default parameter values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,7 +541,7 @@ b&#39;\xe0\xff\xff\xff\xa7\x00\x00\x00&gt;\x00\x00\x00T\x14\x10\x04\x10\x00\x08\
 </div>
 </section>
 <section id="pubchem-fingerprint">
-<h3>1-(4) PubChem Fingerprint<a class="headerlink" href="#pubchem-fingerprint" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.4. </span>1-(4) PubChem Fingerprint<a class="headerlink" href="#pubchem-fingerprint" title="Link to this heading">#</a></h3>
 <p>The PubChem Fingerprint is a 881-bit-long binary fingerprint (<a class="reference external" href="ftp://ftp.ncbi.nlm.nih.gov/pubchem/specifications/pubchem_fingerprints.pdf">ftp://ftp.ncbi.nlm.nih.gov/pubchem/specifications/pubchem_fingerprints.pdf</a>).  Similar to the MACCS keys, it uses a pre-defined fragment dictionary.  The PubChem fingerprint for each compound in PubChem can be downloaded from PubChem.  However, because they are base64-encoded, they should be decoded into binary bitstrings or bitvectors.</p>
 <p>Details about how to decode base64-encoded PubChem fingerprints is described on the last page of the PubChem Fingerprint specification (<a class="reference external" href="ftp://ftp.ncbi.nlm.nih.gov/pubchem/specifications/pubchem_fingerprints.pdf">ftp://ftp.ncbi.nlm.nih.gov/pubchem/specifications/pubchem_fingerprints.pdf</a>).  Below is a user-defined function that decodes a PubChem fingerprint into a bit string.</p>
 <div class="cell docutils container">
@@ -591,7 +596,7 @@ b&#39;\xe0\xff\xff\xff\xa7\x00\x00\x00&gt;\x00\x00\x00T\x14\x10\x04\x10\x00\x08\
 </section>
 </section>
 <section id="computation-of-similarity-scores">
-<h2>2. Computation of similarity scores<a class="headerlink" href="#computation-of-similarity-scores" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>2. Computation of similarity scores<a class="headerlink" href="#computation-of-similarity-scores" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -764,7 +769,7 @@ McConnaughey: 0.7952
 </div>
 </section>
 <section id="interpretation-of-similarity-scores">
-<h2>3. Interpretation of similarity scores<a class="headerlink" href="#interpretation-of-similarity-scores" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>3. Interpretation of similarity scores<a class="headerlink" href="#interpretation-of-similarity-scores" title="Link to this heading">#</a></h2>
 <p>Using molecular fingeprints. we can compute the similarity scores between molecules.  However, how should these scores be interpreted?  For example, the Tanimoto score between CID 60823 and CID 446155 is computed to be 0.662, but does it mean that the two compounds are similar?  How similar is similar?  The following analysis would help answer these questions.</p>
 <p><strong>Step 1.</strong> Randomly select 1,000 compounds from PubChem and download their SMILES strings.</p>
 <div class="cell docutils container">
@@ -1078,8 +1083,17 @@ For molecular fingerprints, use the following:</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Structure Search</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Structure Search</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="lecture08.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Machine Learning Basics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -1097,16 +1111,16 @@ For molecular fingerprints, use the following:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fingerprint-generation">1. Fingerprint Generation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maccs-keys">1-(1) MACCS keys</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circular-fingerprints">1-(2) Circular Fingerprints</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-based-fingeprints">1-(3) Path-Based Fingeprints</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-fingerprint">1-(4) PubChem Fingerprint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">6.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fingerprint-generation">6.2. 1. Fingerprint Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maccs-keys">6.2.1. 1-(1) MACCS keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circular-fingerprints">6.2.2. 1-(2) Circular Fingerprints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-based-fingeprints">6.2.3. 1-(3) Path-Based Fingeprints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-fingerprint">6.2.4. 1-(4) PubChem Fingerprint</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-similarity-scores">2. Computation of similarity scores</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-similarity-scores">3. Interpretation of similarity scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-similarity-scores">6.3. 2. Computation of similarity scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-similarity-scores">6.4. 3. Interpretation of similarity scores</a></li>
 </ul>
   </nav></div>
 
