@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/lecture01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Chemical Structure Inputs for PUG-REST" href="../lecture02.html" />
+    <link rel="next" title="2. Chemical Structure Inputs for PUG-REST" href="lecture02.html" />
     <link rel="prev" title="Intro" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,12 +175,13 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Getting Molecular Properties through PUG-REST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture02.html">2. Chemical Structure Inputs for PUG-REST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture03.html">3. Intercoversion between PubChem records.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture04.html">4. Compound vs Substance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture05.html">5. Structure Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture06.html">6. Molecular Similarity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture08.html">7. Machine Learning Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture02.html">2. Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture03.html">3. Intercoversion between PubChem records.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture04.html">4. Compound vs Substance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture05.html">5. Structure Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture06.html">6. Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture07.html">7. Virtual Screening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture08.html">8. Machine Learning Basics</a></li>
 
 
 </ul>
@@ -224,6 +225,37 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://alex6786.github.io/2019CheminfoOLCCJupyterBook/intro.html/hub/user-redirect/git-pull?repo=https%3A//github.com/executablebooks/jupyter-book&urlpath=tree/jupyter-book/content/lecture01.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -331,11 +363,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">1.1. Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shortest-code-to-get-pubchem-data">1.2. 1. The Shortest Code to Get PubChem Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-pug-rest-request-urls-using-variables">1.3. 2. Formulating PUG-REST request URLs using variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-multiple-requests-using-a-for-loop">1.4. 3. Making multiple requests using a for loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-multiple-molecular-properties">1.5. 4. Getting multiple molecular properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shortest-code-to-get-pubchem-data">1. The Shortest Code to Get PubChem Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-pug-rest-request-urls-using-variables">2. Formulating PUG-REST request URLs using variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-multiple-requests-using-a-for-loop">3. Making multiple requests using a for loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-multiple-molecular-properties">4. Getting multiple molecular properties</a></li>
 </ul>
             </nav>
         </div>
@@ -350,7 +382,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="getting-molecular-properties-through-pug-rest">
 <h1><span class="section-number">1. </span>Getting Molecular Properties through PUG-REST<a class="headerlink" href="#getting-molecular-properties-through-pug-rest" title="Link to this heading">#</a></h1>
 <section id="objectives">
-<h2><span class="section-number">1.1. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Learn the basic approach to getting data from PubChem through PUG-REST</p></li>
 <li><p>Retrieve a single property of a single compound.</p></li>
@@ -361,7 +393,7 @@ document.write(`
 </ul>
 </section>
 <section id="the-shortest-code-to-get-pubchem-data">
-<h2><span class="section-number">1.2. </span>1. The Shortest Code to Get PubChem Data<a class="headerlink" href="#the-shortest-code-to-get-pubchem-data" title="Link to this heading">#</a></h2>
+<h2>1. The Shortest Code to Get PubChem Data<a class="headerlink" href="#the-shortest-code-to-get-pubchem-data" title="Link to this heading">#</a></h2>
 <p>Let’s suppose that we want to get the molecular formula of water from PubChem through PUG-REST.  You can get this data from your web browsers (Chrome, Safari, Internet Explorer, etc) via the following URL:<br>
 <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/water/property/MolecularFormula/txt">https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/water/property/MolecularFormula/txt</a><br>
 Getting the same data using a computer program is not very difficult.  This task can be with a three-line code.</p>
@@ -427,7 +459,7 @@ Getting the same data using a computer program is not very difficult.  This task
 </div>
 </section>
 <section id="formulating-pug-rest-request-urls-using-variables">
-<h2><span class="section-number">1.3. </span>2. Formulating PUG-REST request URLs using variables<a class="headerlink" href="#formulating-pug-rest-request-urls-using-variables" title="Link to this heading">#</a></h2>
+<h2>2. Formulating PUG-REST request URLs using variables<a class="headerlink" href="#formulating-pug-rest-request-urls-using-variables" title="Link to this heading">#</a></h2>
 <p>In the previous examples, the PUG-REST request URLs were directly provided to the <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code>, by explicitly typing the URL within the parentheses.  However, it is also possible to provide the URL using a variable.  The following example shows how to formulate the PUG-REST request URL using variables and pass it to <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -480,7 +512,7 @@ Getting the same data using a computer program is not very difficult.  This task
 <p><strong>Warning:</strong> Avoid using <code class="docutils literal notranslate"><span class="pre">in</span></code> or <code class="docutils literal notranslate"><span class="pre">input</span></code> as a variable name in python.  In python, <code class="docutils literal notranslate"><span class="pre">in</span></code> is a reserved keyword and <code class="docutils literal notranslate"><span class="pre">input</span></code> is the name of a built-in function.  In the example above, the variables are prefixed with “pug” to avoid this naming conflict.</p>
 </section>
 <section id="making-multiple-requests-using-a-for-loop">
-<h2><span class="section-number">1.4. </span>3. Making multiple requests using a for loop<a class="headerlink" href="#making-multiple-requests-using-a-for-loop" title="Link to this heading">#</a></h2>
+<h2>3. Making multiple requests using a for loop<a class="headerlink" href="#making-multiple-requests-using-a-for-loop" title="Link to this heading">#</a></h2>
 <p>The approach in the previous section (that use variables to construct a request URL) looks very inconvenient, compared to the three-line code shown at the beginning, where the request URL is directly provided to <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code>.  If you are making only one request, it would be simpler to provide the URL directly to <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code>, rather than assiging the piecse to variables, constructing the URL from them, and passing it to the function.<br>
 However, if you are making a large number of requests, it would be very time consuming to type the respective request URLs for all requests.  In that case, you want to store common parts as variables and use them in a loop.  For example, suppose that you want to retrieve the SMILES strings of 5 chemicals.</p>
 <div class="cell docutils container">
@@ -633,7 +665,7 @@ However, if you are making a large number of requests, it would be very time con
 </div>
 </section>
 <section id="getting-multiple-molecular-properties">
-<h2><span class="section-number">1.5. </span>4. Getting multiple molecular properties<a class="headerlink" href="#getting-multiple-molecular-properties" title="Link to this heading">#</a></h2>
+<h2>4. Getting multiple molecular properties<a class="headerlink" href="#getting-multiple-molecular-properties" title="Link to this heading">#</a></h2>
 <p>All the examples we have seen in this notebook retrieved a single molecular property for a single compound (although we were able to get a desired property for a group of compounds using a for loop).  However, it is possible to get multiple properties for multiple compounds with a single request.</p>
 <p>The following example retrieves the hydrogen-bond donor count, hydrogen-bond acceptor count, XLogP, TPSA for 5 compounds (represented by PubChem Compound IDs (CIDs) in a comma-separated values (CSV) format.</p>
 <div class="cell docutils container">
@@ -873,7 +905,7 @@ However, if you are making a large number of requests, it would be very time con
       </div>
     </a>
     <a class="right-next"
-       href="../lecture02.html"
+       href="lecture02.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -897,11 +929,11 @@ However, if you are making a large number of requests, it would be very time con
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">1.1. Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shortest-code-to-get-pubchem-data">1.2. 1. The Shortest Code to Get PubChem Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-pug-rest-request-urls-using-variables">1.3. 2. Formulating PUG-REST request URLs using variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-multiple-requests-using-a-for-loop">1.4. 3. Making multiple requests using a for loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-multiple-molecular-properties">1.5. 4. Getting multiple molecular properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shortest-code-to-get-pubchem-data">1. The Shortest Code to Get PubChem Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-pug-rest-request-urls-using-variables">2. Formulating PUG-REST request URLs using variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-multiple-requests-using-a-for-loop">3. Making multiple requests using a for loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-multiple-molecular-properties">4. Getting multiple molecular properties</a></li>
 </ul>
   </nav></div>
 

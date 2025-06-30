@@ -41,12 +41,22 @@ number_equations               : false  # Whether to automatically number all bl
 # Interact link settings
 ########################
 
+
+# launch buttons
+launch_buttons:
+  notebook_interface        : "classic"  # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url             : ""  # The URL of the BinderHub (e.g., https://mybinder.org)
+  jupyterhub_url            : https://alex6786.github.io/2019CheminfoOLCCJupyterBook/intro.html  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+  thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
+  colab_url                 : "" # The URL of Google Colab (https://colab.research.google.com)
+
+
 # General interact settings
-use_jupyterlab                   : false  # If 'true', interact links will use JupyterLab as the interface
+use_jupyterlab                   : true  # If 'true', interact links will use JupyterLab as the interface
 
 # Jupyterhub link settings
 use_jupyterhub_button            : true  # If 'true', display a button that will direct users to a JupyterHub (that you provide)
-jupyterhub_url                   : "https://nanohub.org/tools/jupyterlab70"  # The URL for your JupyterHub. If no URL, use ""
+jupyterhub_url                   : https://nanohub.org/tools/jupyterlab70  # The URL for your JupyterHub. If no URL, use ""
 jupyterhub_interact_text         : "Interact"  # The text that interact buttons will contain.
 
 # Binder link settings
