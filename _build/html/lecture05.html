@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Structure Search &#8212; 2019 Cheminformatics OLCC</title>
+    <title>5. Structure Search &#8212; 2019 Cheminformatics OLCC</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture05';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Molecular Similarity" href="lecture06.html" />
-    <link rel="prev" title="Compound vs Substance" href="lecture04.html" />
+    <link rel="next" title="6. Molecular Similarity" href="lecture06.html" />
+    <link rel="prev" title="4. Compound vs Substance" href="lecture04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,16 +171,20 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Intro
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture01.html">Getting Molecular Properties through PUG-REST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture03.html">Intercoversion between PubChem records.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture04.html">Compound vs Substance</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Structure Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture06.html">Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/lecture01.html">1. Getting Molecular Properties through PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture02.html">2. Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture03.html">3. Intercoversion between PubChem records.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture04.html">4. Compound vs Substance</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Structure Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture06.html">6. Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture08.html">7. Machine Learning Basics</a></li>
+
+
 </ul>
 
     </div>
@@ -329,11 +333,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-search">1. Identity Search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-search">2. Similarity search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substructure-superstructure-search">3. Substructure/Superstructure search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-formula-search">4. Molecular formula search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">5.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-search">5.2. 1. Identity Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-search">5.3. 2. Similarity search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substructure-superstructure-search">5.4. 3. Substructure/Superstructure search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-formula-search">5.5. 4. Molecular formula search</a></li>
 </ul>
             </nav>
         </div>
@@ -346,9 +350,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="structure-search">
-<h1>Structure Search<a class="headerlink" href="#structure-search" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Structure Search<a class="headerlink" href="#structure-search" title="Link to this heading">#</a></h1>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Learn various types of structure searches including identity search, similarity search, substructure and super structure searches.</p></li>
 <li><p>Learn the optional parameters available for each search type.</p></li>
@@ -370,7 +374,7 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 <a class="reference external" href="https://www.rdkit.org/docs/Install.html">https://www.rdkit.org/docs/Install.html</a></p>
 </section>
 <section id="identity-search">
-<h2>1. Identity Search<a class="headerlink" href="#identity-search" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>1. Identity Search<a class="headerlink" href="#identity-search" title="Link to this heading">#</a></h2>
 <p>PUG-REST allows you to search the PubChem Compound database for molecules identical to the query molecule.  PubChem’s identity search supports different contexts of chemical identity, which the user can specify using the optional parameter, “identity_type”.  Here are some commonly-used chemical identity contexts.</p>
 <ul class="simple">
 <li><p><strong>same_connectivity</strong>: returns compounds with the same atom connectivity as the query molecule, ignoring stereochemistry and isotope information.</p></li>
@@ -471,7 +475,7 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </div>
 </section>
 <section id="similarity-search">
-<h2>2. Similarity search<a class="headerlink" href="#similarity-search" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>2. Similarity search<a class="headerlink" href="#similarity-search" title="Link to this heading">#</a></h2>
 <p>PubChem supports 2-dimensional (2-D) and 3-dimensional (3-D) similarity searches.  Because molecular similarity is not a measurable physical observable but a subjective concept, many approaches have been developed to evaluate it.  Detailed discussion on how PubChem quantifyies molecular similarity, read the following LibreTexts page:</p>
 <p><strong>Searching PubChem Using a Non-Textual Query</strong> (<a class="reference external" href="https://bit.ly/2lPznCo">https://bit.ly/2lPznCo</a>)</p>
 <p>The code cell below demonstrates how to perform 2-D and 3-D similarity searches.</p>
@@ -539,7 +543,7 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </div>
 </section>
 <section id="substructure-superstructure-search">
-<h2>3. Substructure/Superstructure search<a class="headerlink" href="#substructure-superstructure-search" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>3. Substructure/Superstructure search<a class="headerlink" href="#substructure-superstructure-search" title="Link to this heading">#</a></h2>
 <p>When a chemical structure occurs as a part of a bigger chemical structure, the former is called a substructure and the latter is referred to as a superstructure (<a class="reference external" href="https://bit.ly/2lPznCo">https://bit.ly/2lPznCo</a>).  PUG-REST supports both substructure and superstructure searches.  For example, below is an example for substructure search using the core structure of antibiotic drugs called cephalosporins as a query (<a class="reference external" href="https://en.wikipedia.org/wiki/Cephalosporin">https://en.wikipedia.org/wiki/Cephalosporin</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,7 +583,7 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </div>
 </section>
 <section id="molecular-formula-search">
-<h2>4. Molecular formula search<a class="headerlink" href="#molecular-formula-search" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.5. </span>4. Molecular formula search<a class="headerlink" href="#molecular-formula-search" title="Link to this heading">#</a></h2>
 <p>Strictly speaking, molecular formula search is not structure search, but its PUG-REST request URL is constructed in a similar way to structure searches like identity, similarity, and substructure/superstructure searches.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -653,7 +657,7 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Compound vs Substance</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Compound vs Substance</p>
       </div>
     </a>
     <a class="right-next"
@@ -661,7 +665,7 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Molecular Similarity</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Molecular Similarity</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -681,11 +685,11 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-search">1. Identity Search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-search">2. Similarity search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substructure-superstructure-search">3. Substructure/Superstructure search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-formula-search">4. Molecular formula search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">5.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-search">5.2. 1. Identity Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-search">5.3. 2. Similarity search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substructure-superstructure-search">5.4. 3. Substructure/Superstructure search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-formula-search">5.5. 4. Molecular formula search</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Machine Learning Basics &#8212; 2019 Cheminformatics OLCC</title>
+    <title>7. Machine Learning Basics &#8212; 2019 Cheminformatics OLCC</title>
   
   
   
@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture08';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="6. Molecular Similarity" href="lecture06.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -169,16 +168,20 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Intro
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture01.html">Getting Molecular Properties through PUG-REST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture03.html">Intercoversion between PubChem records.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture04.html">Compound vs Substance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture05.html">Structure Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture06.html">Molecular Similarity</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="content/lecture01.html">1. Getting Molecular Properties through PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture02.html">2. Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture03.html">3. Intercoversion between PubChem records.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture04.html">4. Compound vs Substance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture05.html">5. Structure Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture06.html">6. Molecular Similarity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Machine Learning Basics</a></li>
+
+
 </ul>
 
     </div>
@@ -327,33 +330,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Machine Learning Basics</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-bioactivity-data-from-pubchem">1. Import bioactivity data from PubChem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-number-of-compounds-for-each-activity-group">2. Check the number of compounds for each activity group</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-active-inactive-compounds-for-model-building">3. Select active/inactive compounds for model building</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-substances-without-associated-cids">3-(1) Drop substances without associated CIDs.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-cids-with-conflicting-activities">3-(2) Remove CIDs with conflicting activities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-redundant-data">3-(3) Remove redundant data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-numeric-activity-classes">3-(4) Adding “numeric” activity classes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-smaller-data-frame-that-only-contains-cids-and-activities">3-(5) Create a smaller data frame that only contains CIDs and activities.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-structure-information-for-each-compound-from-pubchem">4. Download structure information for each compound from PubChem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-maccs-keys-from-smiles">5. Generate MACCS keys from SMILES.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-activity-data-and-fingerprint-information">6. Merge activity data and fingerprint information</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-for-model-building">7. Preparation for model building</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data-into-x-and-y">7-(1) Loading the data into X and y.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-zero-variance-features">7-(2) Remove zero-variance features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split-a-9-1-ratio">7-(3) Train-Test-Split (a 9:1 ratio)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-the-training-set-through-downsampling">7-(4) Balance the training set through downsampling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. Machine Learning Basics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">7.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-bioactivity-data-from-pubchem">7.2. 1. Import bioactivity data from PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-number-of-compounds-for-each-activity-group">7.3. 2. Check the number of compounds for each activity group</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-active-inactive-compounds-for-model-building">7.4. 3. Select active/inactive compounds for model building</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-substances-without-associated-cids">7.5. 3-(1) Drop substances without associated CIDs.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-cids-with-conflicting-activities">7.6. 3-(2) Remove CIDs with conflicting activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-redundant-data">7.7. 3-(3) Remove redundant data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-numeric-activity-classes">7.8. 3-(4) Adding “numeric” activity classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-smaller-data-frame-that-only-contains-cids-and-activities">7.9. 3-(5) Create a smaller data frame that only contains CIDs and activities.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-structure-information-for-each-compound-from-pubchem">7.10. 4. Download structure information for each compound from PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-maccs-keys-from-smiles">7.11. 5. Generate MACCS keys from SMILES.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-activity-data-and-fingerprint-information">7.12. 6. Merge activity data and fingerprint information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-for-model-building">7.13. 7. Preparation for model building</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data-into-x-and-y">7.14. 7-(1) Loading the data into X and y.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-zero-variance-features">7.15. 7-(2) Remove zero-variance features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split-a-9-1-ratio">7.16. 7-(3) Train-Test-Split (a 9:1 ratio)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-the-training-set-through-downsampling">7.17. 7-(4) Balance the training set through downsampling</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-model-using-the-training-set">8. Build a model using the training set.</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">8-(1) Naive Bayes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">8-(2) Decision Tree</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-building-through-cross-validation">9. Model building through cross-validation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-model-using-the-training-set">8. 8. Build a model using the training set.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">8.1. 8-(1) Naive Bayes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">8.2. 8-(2) Decision Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-building-through-cross-validation">8.3. 9. Model building through cross-validation</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9. Exercises</a></li>
 </ul>
 
             </nav>
@@ -367,16 +370,16 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-basics">
-<h1>Machine Learning Basics<a class="headerlink" href="#machine-learning-basics" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Machine Learning Basics<a class="headerlink" href="#machine-learning-basics" title="Link to this heading">#</a></h1>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Build binary classification models that predict activity/inactivity of small molecules against human aromatase using supervised learning methods.</p></li>
 <li><p>Evaluate the performance of the developed models using performance measures.</p></li>
 </ul>
 </section>
 <section id="import-bioactivity-data-from-pubchem">
-<h2>1. Import bioactivity data from PubChem<a class="headerlink" href="#import-bioactivity-data-from-pubchem" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>1. Import bioactivity data from PubChem<a class="headerlink" href="#import-bioactivity-data-from-pubchem" title="Link to this heading">#</a></h2>
 <p>In this notebook, we will develop a prediction model for small molecule’s activity against human aromatase (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/EAW77416">https://pubchem.ncbi.nlm.nih.gov/protein/EAW77416</a>), which is encoded by the CYP19A1 gene (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/gene/1588">https://pubchem.ncbi.nlm.nih.gov/gene/1588</a>). The model will predict the activity of a molecule based on the structure of the molecule (represented with molecular fingerprints).</p>
 <p>For model development, we will use the Tox21 bioassay data for human aromatase, archived in PubChem (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743139">https://pubchem.ncbi.nlm.nih.gov/bioassay/743139</a>).  The bioactivity data presented on this page can be downloaded by clicking the “Download” button available on this page and then read the data into a data frame.  Alternatively, you can directly load the data into a data frame as shown in the cell below.</p>
 <div class="cell docutils container">
@@ -774,7 +777,7 @@ document.write(`
 </div>
 </section>
 <section id="check-the-number-of-compounds-for-each-activity-group">
-<h2>2. Check the number of compounds for each activity group<a class="headerlink" href="#check-the-number-of-compounds-for-each-activity-group" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>2. Check the number of compounds for each activity group<a class="headerlink" href="#check-the-number-of-compounds-for-each-activity-group" title="Link to this heading">#</a></h2>
 <p>First, we need to understand what our data look like.  Especially, we are interested in the activity class of the tested compounds because we are developing a model that classifies small molecules according to their activities against the target.  This information is available in the “<strong>activity_outcome</strong>” and “<strong>activity_summary</strong>” columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1104,7 +1107,7 @@ document.write(`
 </ul>
 </section>
 <section id="select-active-inactive-compounds-for-model-building">
-<h2>3. Select active/inactive compounds for model building<a class="headerlink" href="#select-active-inactive-compounds-for-model-building" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>3. Select active/inactive compounds for model building<a class="headerlink" href="#select-active-inactive-compounds-for-model-building" title="Link to this heading">#</a></h2>
 <p>Now we want to select only the active and inactive compounds from the data frame (that is, active agonists, active antagonists, and inactives based on the “activity summary” column).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1141,7 +1144,7 @@ document.write(`
 <p>Second, some compounds are associated with more than one substances.  In the context of this assay, it means that a compound may be tested multiple times in different samples (which are designated as different substances).  It is not uncommon that different samples of the same chemical may result in conflicting activities (e.g., active agonist in one sample but inactive in another sample).  In this practice, we remove such compounds with conflicting activities.</p>
 </section>
 <section id="drop-substances-without-associated-cids">
-<h2>3-(1) Drop substances without associated CIDs.<a class="headerlink" href="#drop-substances-without-associated-cids" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.5. </span>3-(1) Drop substances without associated CIDs.<a class="headerlink" href="#drop-substances-without-associated-cids" title="Link to this heading">#</a></h2>
 <p>First, check if there are subtances without associated CIDs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1227,7 +1230,7 @@ dtype: int64
 </div>
 </section>
 <section id="remove-cids-with-conflicting-activities">
-<h2>3-(2) Remove CIDs with conflicting activities<a class="headerlink" href="#remove-cids-with-conflicting-activities" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>3-(2) Remove CIDs with conflicting activities<a class="headerlink" href="#remove-cids-with-conflicting-activities" title="Link to this heading">#</a></h2>
 <p>Now identify compounds with conflicting activities and remove them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1618,7 +1621,7 @@ dtype: int64
 </div>
 </section>
 <section id="remove-redundant-data">
-<h2>3-(3) Remove redundant data<a class="headerlink" href="#remove-redundant-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.7. </span>3-(3) Remove redundant data<a class="headerlink" href="#remove-redundant-data" title="Link to this heading">#</a></h2>
 <p>The above code cells [in 3-(2)] do not remove compounds tested multiple times if the testing results are consistent [e.g., active agonist in all samples (substances)].  The rows corresponding to these compounds are redundant, so we want remove them except for only one row for each compound.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1637,7 +1640,7 @@ dtype: int64
 </div>
 </section>
 <section id="adding-numeric-activity-classes">
-<h2>3-(4) Adding “numeric” activity classes<a class="headerlink" href="#adding-numeric-activity-classes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8. </span>3-(4) Adding “numeric” activity classes<a class="headerlink" href="#adding-numeric-activity-classes" title="Link to this heading">#</a></h2>
 <p>In general, the inputs and outputs to machine learning algorithms need to have numerical forms.<br />
 In this practice, the input (molecular structure) will be represented with binary fingerprints, which already have numerical forms (0 or 1).  However, the output (activity) is currently in a string format (e.g., ‘active agonist’, ‘active antagonist’).  Therefore, we want to add an additional, ‘activity’ column, which contains numeric codes representing the active and inactive compounds:</p>
 <ul class="simple">
@@ -1981,7 +1984,7 @@ In this practice, the input (molecular structure) will be represented with binar
 </div>
 </section>
 <section id="create-a-smaller-data-frame-that-only-contains-cids-and-activities">
-<h2>3-(5) Create a smaller data frame that only contains CIDs and activities.<a class="headerlink" href="#create-a-smaller-data-frame-that-only-contains-cids-and-activities" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.9. </span>3-(5) Create a smaller data frame that only contains CIDs and activities.<a class="headerlink" href="#create-a-smaller-data-frame-that-only-contains-cids-and-activities" title="Link to this heading">#</a></h2>
 <p>Let’s create a smaller data frame that only contains CIDs and activities.  This data frame will be merged with a data frame containing molecular fingerprint information.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2051,7 +2054,7 @@ In this practice, the input (molecular structure) will be represented with binar
 </div>
 </section>
 <section id="download-structure-information-for-each-compound-from-pubchem">
-<h2>4. Download structure information for each compound from PubChem<a class="headerlink" href="#download-structure-information-for-each-compound-from-pubchem" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.10. </span>4. Download structure information for each compound from PubChem<a class="headerlink" href="#download-structure-information-for-each-compound-from-pubchem" title="Link to this heading">#</a></h2>
 <p>Now we want to get structure information of the compounds from PubChem (in isomeric SMILES).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2251,7 +2254,7 @@ Processing Chunk  30
 </div>
 </section>
 <section id="generate-maccs-keys-from-smiles">
-<h2>5. Generate MACCS keys from SMILES.<a class="headerlink" href="#generate-maccs-keys-from-smiles" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.11. </span>5. Generate MACCS keys from SMILES.<a class="headerlink" href="#generate-maccs-keys-from-smiles" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
@@ -2473,7 +2476,7 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 </div>
 </section>
 <section id="merge-activity-data-and-fingerprint-information">
-<h2>6. Merge activity data and fingerprint information<a class="headerlink" href="#merge-activity-data-and-fingerprint-information" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.12. </span>6. Merge activity data and fingerprint information<a class="headerlink" href="#merge-activity-data-and-fingerprint-information" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -2782,10 +2785,10 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 </div>
 </section>
 <section id="preparation-for-model-building">
-<h2>7. Preparation for model building<a class="headerlink" href="#preparation-for-model-building" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.13. </span>7. Preparation for model building<a class="headerlink" href="#preparation-for-model-building" title="Link to this heading">#</a></h2>
 </section>
 <section id="loading-the-data-into-x-and-y">
-<h2>7-(1) Loading the data into X and y.<a class="headerlink" href="#loading-the-data-into-x-and-y" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.14. </span>7-(1) Loading the data into X and y.<a class="headerlink" href="#loading-the-data-into-x-and-y" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -3064,7 +3067,7 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 </div>
 </section>
 <section id="remove-zero-variance-features">
-<h2>7-(2) Remove zero-variance features<a class="headerlink" href="#remove-zero-variance-features" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.15. </span>7-(2) Remove zero-variance features<a class="headerlink" href="#remove-zero-variance-features" title="Link to this heading">#</a></h2>
 <p>Some features in X are not helpful in distinguishing actives from inactives, because they are set ON for all compounds or OFF for all compounds.  Such features need to be removed because they would consume more computational resources without improving the model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3102,7 +3105,7 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 <p>In this case, four features had zero variances.  Note that one of them is the first bit (maccs000) of the MACCS keys, which is added as a “dummy” to name each of bits 1~166 as maccs001, maccs002, … maccs166.</p>
 </section>
 <section id="train-test-split-a-9-1-ratio">
-<h2>7-(3) Train-Test-Split (a 9:1 ratio)<a class="headerlink" href="#train-test-split-a-9-1-ratio" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.16. </span>7-(3) Train-Test-Split (a 9:1 ratio)<a class="headerlink" href="#train-test-split-a-9-1-ratio" title="Link to this heading">#</a></h2>
 <p>Now split the data set into a training set (90%) and test set (10%).  The training set will be used to train the model.  The developed model will be tested against the test set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3125,7 +3128,7 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 </div>
 </section>
 <section id="balance-the-training-set-through-downsampling">
-<h2>7-(4) Balance the training set through downsampling<a class="headerlink" href="#balance-the-training-set-through-downsampling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.17. </span>7-(4) Balance the training set through downsampling<a class="headerlink" href="#balance-the-training-set-through-downsampling" title="Link to this heading">#</a></h2>
 <p>Check the dimension of the training data set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3215,7 +3218,7 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="build-a-model-using-the-training-set">
-<h1>8. Build a model using the training set.<a class="headerlink" href="#build-a-model-using-the-training-set" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>8. Build a model using the training set.<a class="headerlink" href="#build-a-model-using-the-training-set" title="Link to this heading">#</a></h1>
 <p>Now we are ready to build predictive models using machine learning algorithms available in the scikit-learn library (<a class="reference external" href="https://scikit-learn.org/">https://scikit-learn.org/</a>).  This notebook will use Naive Bayes and decisiont tree, because they are relatively fast and simple.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3236,7 +3239,7 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 </div>
 </div>
 <section id="naive-bayes">
-<h2>8-(1) Naive Bayes<a class="headerlink" href="#naive-bayes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>8-(1) Naive Bayes<a class="headerlink" href="#naive-bayes" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">BernoulliNB</span><span class="p">()</span>            <span class="c1"># set up the NB classification model</span>
@@ -3387,7 +3390,7 @@ weighted avg       0.86      0.67      0.73       680
 </div>
 </section>
 <section id="decision-tree">
-<h2>8-(2) Decision Tree<a class="headerlink" href="#decision-tree" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>8-(2) Decision Tree<a class="headerlink" href="#decision-tree" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>    <span class="c1"># set up the DT classification model</span>
@@ -3523,7 +3526,7 @@ weighted avg       0.86      0.67      0.73       680
 <p>When the DT model was applied to the test set, all performance measures were much worse than those for the training set.  This is a typical example of <strong>outfitting</strong>.</p>
 </section>
 <section id="model-building-through-cross-validation">
-<h2>9. Model building through cross-validation<a class="headerlink" href="#model-building-through-cross-validation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>9. Model building through cross-validation<a class="headerlink" href="#model-building-through-cross-validation" title="Link to this heading">#</a></h2>
 <p>In the above section, the models were developed using the default values for many optional hyperparamters, which cannot be learned by the training algorithm.  For example, when building a decision tree model, one should specify how the tree should be deep, how many compounds should be allowed in a single leaf, what is the minimum number of compounds in a single leaf, etc.</p>
 <p>The cells below demonstrate how to perform hyperparameter optimization through 10-fold cross-validation.  In this example, five values for each of three hyperparameters used in decision tree are considered (max_depth, min_samples_split, and min_samples_leaf), resulting in a total of 125 combination of the parameter values (=5 x 5 x 5).  For each combination, 10 models are generated (through 10-fold cross validation) and the average performance will be tracked.  The goal is to find the parameter value combination that results in the highest average performance score (e.g., ‘roc_auc’) from the 10-fold cross validation.</p>
 <div class="cell docutils container">
@@ -3848,7 +3851,7 @@ Grid {&#39;max_depth&#39;: 7, &#39;min_samples_leaf&#39;: 6, &#39;min_samples_sp
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <p>In this assignment, we will build predictive models using the same aromatase data.</p>
 <p><strong>step 1</strong> Show the following information to make sure that the activity data in the <strong>df_activity</strong> data frame is still available.</p>
 <ul class="simple">
@@ -4780,6 +4783,15 @@ Grid {&#39;n_estimators&#39;: 200} : 0.7730 0.6969
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="lecture06.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Molecular Similarity</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -4796,33 +4808,33 @@ Grid {&#39;n_estimators&#39;: 200} : 0.7730 0.6969
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Machine Learning Basics</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-bioactivity-data-from-pubchem">1. Import bioactivity data from PubChem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-number-of-compounds-for-each-activity-group">2. Check the number of compounds for each activity group</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-active-inactive-compounds-for-model-building">3. Select active/inactive compounds for model building</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-substances-without-associated-cids">3-(1) Drop substances without associated CIDs.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-cids-with-conflicting-activities">3-(2) Remove CIDs with conflicting activities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-redundant-data">3-(3) Remove redundant data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-numeric-activity-classes">3-(4) Adding “numeric” activity classes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-smaller-data-frame-that-only-contains-cids-and-activities">3-(5) Create a smaller data frame that only contains CIDs and activities.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-structure-information-for-each-compound-from-pubchem">4. Download structure information for each compound from PubChem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-maccs-keys-from-smiles">5. Generate MACCS keys from SMILES.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-activity-data-and-fingerprint-information">6. Merge activity data and fingerprint information</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-for-model-building">7. Preparation for model building</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data-into-x-and-y">7-(1) Loading the data into X and y.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-zero-variance-features">7-(2) Remove zero-variance features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split-a-9-1-ratio">7-(3) Train-Test-Split (a 9:1 ratio)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-the-training-set-through-downsampling">7-(4) Balance the training set through downsampling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. Machine Learning Basics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">7.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-bioactivity-data-from-pubchem">7.2. 1. Import bioactivity data from PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-number-of-compounds-for-each-activity-group">7.3. 2. Check the number of compounds for each activity group</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-active-inactive-compounds-for-model-building">7.4. 3. Select active/inactive compounds for model building</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-substances-without-associated-cids">7.5. 3-(1) Drop substances without associated CIDs.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-cids-with-conflicting-activities">7.6. 3-(2) Remove CIDs with conflicting activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-redundant-data">7.7. 3-(3) Remove redundant data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-numeric-activity-classes">7.8. 3-(4) Adding “numeric” activity classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-smaller-data-frame-that-only-contains-cids-and-activities">7.9. 3-(5) Create a smaller data frame that only contains CIDs and activities.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-structure-information-for-each-compound-from-pubchem">7.10. 4. Download structure information for each compound from PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-maccs-keys-from-smiles">7.11. 5. Generate MACCS keys from SMILES.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-activity-data-and-fingerprint-information">7.12. 6. Merge activity data and fingerprint information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-for-model-building">7.13. 7. Preparation for model building</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data-into-x-and-y">7.14. 7-(1) Loading the data into X and y.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-zero-variance-features">7.15. 7-(2) Remove zero-variance features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split-a-9-1-ratio">7.16. 7-(3) Train-Test-Split (a 9:1 ratio)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-the-training-set-through-downsampling">7.17. 7-(4) Balance the training set through downsampling</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-model-using-the-training-set">8. Build a model using the training set.</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">8-(1) Naive Bayes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">8-(2) Decision Tree</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-building-through-cross-validation">9. Model building through cross-validation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-model-using-the-training-set">8. 8. Build a model using the training set.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">8.1. 8-(1) Naive Bayes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">8.2. 8-(2) Decision Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-building-through-cross-validation">8.3. 9. Model building through cross-validation</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9. Exercises</a></li>
 </ul>
 
   </nav></div>

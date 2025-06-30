@@ -1,11 +1,13 @@
 format: jb-book
 root: intro
+options:
+  numbered: true
 chapters:
-- file: lecture01
-#- file: /content/features/lecture02
+- file: content/lecture01
+- file: lecture02
 - file: lecture03
 - file: lecture04
 - file: lecture05
 - file: lecture06
 #- file: /content/features/lecture07
-#- file: /content/features/lecture08
+- file: lecture08

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Compound vs Substance &#8212; 2019 Cheminformatics OLCC</title>
+    <title>4. Compound vs Substance &#8212; 2019 Cheminformatics OLCC</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture04';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Structure Search" href="lecture05.html" />
-    <link rel="prev" title="Intercoversion between PubChem records." href="lecture03.html" />
+    <link rel="next" title="5. Structure Search" href="lecture05.html" />
+    <link rel="prev" title="3. Intercoversion between PubChem records." href="lecture03.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,16 +169,20 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Intro
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture01.html">Getting Molecular Properties through PUG-REST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture03.html">Intercoversion between PubChem records.</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Compound vs Substance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture05.html">Structure Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture06.html">Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/lecture01.html">1. Getting Molecular Properties through PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture02.html">2. Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture03.html">3. Intercoversion between PubChem records.</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Compound vs Substance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture05.html">5. Structure Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture06.html">6. Molecular Similarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture08.html">7. Machine Learning Basics</a></li>
+
+
 </ul>
 
     </div>
@@ -327,8 +331,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-standardization">1. Structure Standardization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">4.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-standardization">4.2. 1. Structure Standardization</a></li>
 </ul>
             </nav>
         </div>
@@ -341,9 +345,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="compound-vs-substance">
-<h1>Compound vs Substance<a class="headerlink" href="#compound-vs-substance" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Compound vs Substance<a class="headerlink" href="#compound-vs-substance" title="Link to this heading">#</a></h1>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Understand the difference between compounds and substances in PubChem’s terminology.</p></li>
 <li><p>Learn how chemical structures are represented in a real world.</p></li>
@@ -357,7 +361,7 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 <a class="reference external" href="https://www.rdkit.org/docs/Install.html">https://www.rdkit.org/docs/Install.html</a></p>
 </section>
 <section id="structure-standardization">
-<h2>1. Structure Standardization<a class="headerlink" href="#structure-standardization" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>1. Structure Standardization<a class="headerlink" href="#structure-standardization" title="Link to this heading">#</a></h2>
 <p>PubChem contains more than 200 millions chemical records submitted by hundreds of data contributors.  These depositor-provided records are archived in a database called “<strong>Substance</strong>” and each record in this database is called a <strong>substance</strong>.  The records in the Substance database are highly redundant, because different data contributors may submit information on the same chemical, independently of each other.  Therefore, PubChem extracts unique chemical structures from the Substance database through a process called standardization (<a class="reference external" href="https://doi.org/10.1186/s13321-018-0293-8">https://doi.org/10.1186/s13321-018-0293-8</a>).  These unique structures are stored in the <strong>Compound</strong> database and individaual records in this database is called “<strong>compounds</strong>”.  To learn more about the PubChem compounds and substances, please read this PubChem Blog post (<a class="reference external" href="https://go.usa.gov/xVXct">https://go.usa.gov/xVXct</a>).</p>
 <p>The code cells below demonstrates the effects of chemical structure standardization.</p>
 <p><strong>Step 1.</strong> Download a list of the SIDs associated with a given CID</p>
@@ -695,7 +699,7 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Intercoversion between PubChem records.</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Intercoversion between PubChem records.</p>
       </div>
     </a>
     <a class="right-next"
@@ -703,7 +707,7 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Structure Search</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Structure Search</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -723,8 +727,8 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-standardization">1. Structure Standardization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">4.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-standardization">4.2. 1. Structure Standardization</a></li>
 </ul>
   </nav></div>
 
