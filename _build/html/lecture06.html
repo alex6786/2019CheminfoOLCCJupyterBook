@@ -1,0 +1,1164 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Molecular Similarity &#8212; 2019 Cheminformatics OLCC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture06';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Structure Search" href="lecture05.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">2019 Cheminformatics OLCC</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lecture01.html">Getting Molecular Properties through PUG-REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture03.html">Intercoversion between PubChem records.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture04.html">Compound vs Substance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture05.html">Structure Search</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Molecular Similarity</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/lecture06.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Molecular Similarity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fingerprint-generation">1. Fingerprint Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maccs-keys">1-(1) MACCS keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circular-fingerprints">1-(2) Circular Fingerprints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-based-fingeprints">1-(3) Path-Based Fingeprints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-fingerprint">1-(4) PubChem Fingerprint</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-similarity-scores">2. Computation of similarity scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-similarity-scores">3. Interpretation of similarity scores</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="molecular-similarity">
+<h1>Molecular Similarity<a class="headerlink" href="#molecular-similarity" title="Link to this heading">#</a></h1>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Generete molecular fingerprints for a given molecule.</p></li>
+<li><p>Evaluate structural similarity between molecules using different molecular fingerpints and similarity metrics.</p></li>
+</ul>
+<p>Many useful documents/papers describe various aspects of molecular similarity, including molecular fingerprints and similarity measures.  Please read these if you need more details.</p>
+<ul class="simple">
+<li><p>Getting Started with the RDKit in Python<br>
+(<a class="reference external" href="https://www.rdkit.org/docs/GettingStartedInPython.html#fingerprinting-and-molecular-similarity">https://www.rdkit.org/docs/GettingStartedInPython.html#fingerprinting-and-molecular-similarity</a>)</p></li>
+<li><p>Fingerprint Generation, GraphSim Toolkit 2.4.2<br>
+(<a class="reference external" href="https://docs.eyesopen.com/toolkits/python/graphsimtk/fingerprint.html">https://docs.eyesopen.com/toolkits/python/graphsimtk/fingerprint.html</a>)</p></li>
+<li><p>Chemical Fingerprints<br>
+(<a class="reference external" href="https://docs.chemaxon.com/display/docs/Chemical+Fingerprints">https://docs.chemaxon.com/display/docs/Chemical+Fingerprints</a>)</p></li>
+<li><p>Extended-Connectivity Fingerprints<br>
+(<a class="reference external" href="https://doi.org/10.1021/ci100050t">https://doi.org/10.1021/ci100050t</a>)</p></li>
+</ul>
+</section>
+<section id="fingerprint-generation">
+<h2>1. Fingerprint Generation<a class="headerlink" href="#fingerprint-generation" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;rdkit&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;CC(C)C1=C(C(=C(N1CC[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)C3=CC=CC=C3)C(=O)NC4=CC=CC=C4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="maccs-keys">
+<h3>1-(1) MACCS keys<a class="headerlink" href="#maccs-keys" title="Link to this heading">#</a></h3>
+<p>The MACCS key is a binary fingerprint (a string of 0’s and 1’s).  Each bit position represents the presence (=1) or absence (=0) of a pre-defined structural feature.  The feature definitions for the MACCS keys are available at:<br> <a class="github reference external" href="https://github.com/rdkit/rdkit/blob/master/rdkit/Chem/MACCSkeys.py">rdkit/rdkit</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">MACCSkeys</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">MACCSkeys</span><span class="o">.</span><span class="n">GenMACCSKeys</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">fp</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fp</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">fp</span><span class="o">.</span><span class="n">ToBitString</span><span class="p">()</span>    <span class="c1"># Alternative, easier way to convert it to a bitstring.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;rdkit.DataStructs.cDataStructs.ExplicitBitVect&#39;&gt;
+00000000000000000000000000000000000000000010000000000100000000100100000000110000100101010111100011001000100110110000011001110100110111111101101011111111111111111111110
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;00000000000000000000000000000000000000000010000000000100000000100100000000110000100101010111100011001000100110110000011001110100110111111101101011111111111111111111110&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>167
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the MACCS key is <strong>166-bit-long</strong>, but RDKit generates a 167-bit-long fingerprint.  It is because the index of a list/vector in many programming languages (including python) begins at 0.  To use the original numbering of the MACCS keys (1-166) (rather than 0-165), the MACCS keys were implemented to be 167-bit-long, with Bit 0 being always zero. Because Bit 0 is set to OFF for all compounds, it does not affect the evaluation of molecular similarity.</p>
+<p>These are some methods that allow you to get some additional information on the MACCS Keys.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">GetNumBits</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">GetNumOffBits</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">GetNumOnBits</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">ToBinary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>167
+105
+62
+b&#39;\xe0\xff\xff\xff\xa7\x00\x00\x00&gt;\x00\x00\x00T\x14\x10\x04\x10\x00\x08\x04\x02\x02\x02\x00\x00\x00\x06\x00\x04\x06\x04\x00\x02\x00\n\x00\x04\x00\x00\x02\x04\x00\x02\x00\x00\x00\x00\x00\x00\x02\x00\x02\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 1a:</strong> Generate the MACCS keys for the molecules represented by the following SMILES, and get the positions of the bits set to ON in each of the three fingerprints.  What fragments do these bit positions correspond to?  (the bit definitions are available at</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;C1=CC=CC=C1&#39;</span><span class="p">,</span> <span class="c1"># Benzene (Kekule)</span>
+           <span class="s1">&#39;c1ccccc1&#39;</span><span class="p">,</span>    <span class="c1"># Benzene (&quot;Aromatized&quot; carbons)</span>
+           <span class="s1">&#39;C1CCCCC1&#39;</span><span class="p">]</span>     <span class="c1"># Cyclohexene</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><br><strong>Write the fragment definition of the bits ON</strong> (one is already provided for you as an example).</p>
+</section>
+<section id="circular-fingerprints">
+<h3>1-(2) Circular Fingerprints<a class="headerlink" href="#circular-fingerprints" title="Link to this heading">#</a></h3>
+<p>Circular fingerprints are hashed fingerprints.  They are generated by exhaustively enumerating “circular” fragments (containing all atoms within a given radius from each heavy atom of the molecule) and then hashing these fragments into a fixed-length bitstring.  (Here, the “radius” from an atom is measured by the number of bonds that separates two atoms).</p>
+<p>Examples of circular fingerprints are the extended-connectivity fingerprint (ECFPs) and their variant called FCFPs (Functional-Class Fingerprints), originally described in a paper by Rogers and Hahn (<a class="reference external" href="https://doi.org/10.1021/ci100050t">https://doi.org/10.1021/ci100050t</a>).  The RDKit implementation of these fingerprints are called “Morgan Fingerprints” (<a class="reference external" href="https://www.rdkit.org/docs/GettingStartedInPython.html#morgan-fingerprints-circular-fingerprints">https://www.rdkit.org/docs/GettingStartedInPython.html#morgan-fingerprints-circular-fingerprints</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">AllChem</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">GetMorganFingerprintAsBitVect</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">nBits</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">ToBitString</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0100000000000000000000000000010001100000000000000000010000000000100000000000000010000000001000000000000000000100000001000100000010000000100000000000000010000000000000000100000100000000000000010000000000000000000000000000000000010000000000000000000000000000000000000010000000000000000100000100000000000000000000000000000000000000000000000000000000000001000010010000000000000000000000000010010000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000100000000000000000000000001000000000000000000000100010000000000000000000000000010010000000000000000001000100000000010000000001001000000000100100000000000000000000000000000000000000000000000000001000000000100001000000000000000000000000000000000000000001000000000000000000000000000000000000000000010010000000100000000000000000000000000000010000000000000000001000000000000000000100000000000000000000000000000000000000001000000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>When comparing the RDK’s Morgan fingerprints with the ECFP/FCFP fingerprints, it is important to remember that the name of ECFP/FCFP fingerprints are suffixed with the <strong>diameter</strong> of the atom environments considered, while the Morgan Fingerprints take a <strong>radius</strong> parameter (e.g., the second argument “2” of GetMorganFingerprintAsBitVect() in the above code cell).  The Morgan fingerprint generated above (with a radius of 2) is comparable to the ECFP4 fingerprint (with a diameter of 4).</p>
+<p><strong>Exercise 1b:</strong> For the moleculess below, generate the 512-bit-long Morgan Fingeprint comparable to the <strong>FCFP6</strong> fingerprint.</p>
+<ul class="simple">
+<li><p>Search for the compounds by name and get their SMILES strings.</p></li>
+<li><p>Generate the molecular fingerprints from the SMILES strings.</p></li>
+<li><p>Print the generated fingerprints.</p></li>
+<li><p>To generate FCFP (not ECFP), read the following document: <a class="reference external" href="https://www.rdkit.org/docs/GettingStartedInPython.html#morgan-fingerprints-circular-fingerprints">https://www.rdkit.org/docs/GettingStartedInPython.html#morgan-fingerprints-circular-fingerprints</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">synonyms</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;diphenhydramine&#39;</span><span class="p">,</span> <span class="s1">&#39;cetirizine&#39;</span><span class="p">,</span> <span class="s1">&#39;fexofenadine&#39;</span><span class="p">,</span> <span class="s1">&#39;loratadine&#39;</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="path-based-fingeprints">
+<h3>1-(3) Path-Based Fingeprints<a class="headerlink" href="#path-based-fingeprints" title="Link to this heading">#</a></h3>
+<p>Path-based fingerprints are also hashed fingerprints.  They are generated by enumerating linear fragments of a given length and hashing them into a fixed-length bitstring.  An example is the RDKit’s topological fingeprint.  As described in the RDK documentation (<a class="reference external" href="https://www.rdkit.org/docs/GettingStartedInPython.html#topological-fingerprints">https://www.rdkit.org/docs/GettingStartedInPython.html#topological-fingerprints</a>), while this fingerprint can be generated using FingerprintMols.FingerprintMol(), it is recommended to use rdmolops.RDKFingerprint() to generate the fingerprint using non-default parameter values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">rdmolops</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">rdmolops</span><span class="o">.</span><span class="n">RDKFingerprint</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">fpSize</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span> <span class="n">minPath</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">maxPath</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">ToBitString</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11011101111101010111110010111110101111011110100111111111110111001111111101101111011111111111101111111011111101111101010010110111011111011111111111011011011111101110001101111111000110010101111111110110111011010111110101111101111001111111011111101111110011101110111010010110001110001111011001111110001111111001111011111110000100001111101111110111111111000111111111111110111001010111011111111101111011111010000110110101111111110111111011100111011110110111010111111011111111101111110111011011101111111111011111111111111011110100100011111111110110101110110001101111101110111101011110101111111101010010011110010111101110110011000011110111011111111110111111110111101111001000011101001111111110011101101011111001011101001111011011011111011111111111111111011101110000111011111011110111110101001111001110111111111111111101101111110110101111111001111001101101100111111100111101101010111111000101111101101111111110110111111111011111011011111111011111101011101010010011101101101110111110011111000011101011110011111011100100111011011010111111111010010101111111100111101110111010111110001101011111110101110111111101111111111111010110100011101101110011011010011110100111111111101111101110101111010011110001110101101101011101110001111111111011101001110110001101111110111011100011010101111110111111111011110110111111101110001011011110000111111001111100011111011011111101110010001001010011111110110011011011111000011101111101110111111111101111111100111110100010111011000110111101100110111111111100111101111101111101111111100011111101111111011100101110110110010011110111110110111011101110101001110110111101011111011011100101111111110100110100111100110111010011001111010110010111011111111010101100111111110111001000111110111011111101110001110101111111111010001101101111111101110111111101011011111011110111111011101110101011011011101101111101110101111101011011110101111111111111010011110011111111111101011110111111110001011111111111111111000111101111110110111111101111111111111001011011110111111111111011111110101111101110101111011010010101010110010011111011011110111011
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pubchem-fingerprint">
+<h3>1-(4) PubChem Fingerprint<a class="headerlink" href="#pubchem-fingerprint" title="Link to this heading">#</a></h3>
+<p>The PubChem Fingerprint is a 881-bit-long binary fingerprint (<a class="reference external" href="ftp://ftp.ncbi.nlm.nih.gov/pubchem/specifications/pubchem_fingerprints.pdf">ftp://ftp.ncbi.nlm.nih.gov/pubchem/specifications/pubchem_fingerprints.pdf</a>).  Similar to the MACCS keys, it uses a pre-defined fragment dictionary.  The PubChem fingerprint for each compound in PubChem can be downloaded from PubChem.  However, because they are base64-encoded, they should be decoded into binary bitstrings or bitvectors.</p>
+<p>Details about how to decode base64-encoded PubChem fingerprints is described on the last page of the PubChem Fingerprint specification (<a class="reference external" href="ftp://ftp.ncbi.nlm.nih.gov/pubchem/specifications/pubchem_fingerprints.pdf">ftp://ftp.ncbi.nlm.nih.gov/pubchem/specifications/pubchem_fingerprints.pdf</a>).  Below is a user-defined function that decodes a PubChem fingerprint into a bit string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">base64</span><span class="w"> </span><span class="kn">import</span> <span class="n">b64decode</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">PCFP_BitString</span><span class="p">(</span><span class="n">pcfp_base64</span><span class="p">)</span> <span class="p">:</span>
+
+    <span class="n">pcfp_bitstring</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">{:08b}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">b64decode</span><span class="p">(</span> <span class="n">pcfp_base64</span> <span class="p">)]</span> <span class="p">)[</span><span class="mi">32</span><span class="p">:</span><span class="mi">913</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pcfp_bitstring</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pcfps</span> <span class="o">=</span> <span class="s1">&#39;AAADcYBgAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAABAAAAGAAAAAAACACAEAAwAIAAAACAACBCAAACAAAgAAAIiAAAAIgIICKAERCAIAAggAAIiAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">PCFP_BitString</span><span class="p">(</span><span class="n">pcfps</span><span class="p">))</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PCFP_BitString</span><span class="p">(</span><span class="n">pcfps</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>881
+10000000011000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001100000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000001100000000000000000000000000000000000000000000000100000000000100000000001000000000000001100000000000010000000000000000000000000000000100000000000000000100000010000100000000000000000000000100000000000000000001000000000000000000000000010001000100000000000000000000000000010001000000010000010000000100010100000000001000100010000100000000010000000000000001000001000000000000000000010001000100000000111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>The generated bitstring can be converted to a bitvector that can be used for molecular similarity computation in RDKit (to be discussed in the next section).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataStructs</span>
+<span class="n">bitvect</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">CreateFromBitString</span><span class="p">(</span><span class="n">PCFP_BitString</span><span class="p">(</span><span class="n">pcfps</span><span class="p">))</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">bitvect</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rdkit.DataStructs.cDataStructs.ExplicitBitVect
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="computation-of-similarity-scores">
+<h2>2. Computation of similarity scores<a class="headerlink" href="#computation-of-similarity-scores" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cids</span> <span class="o">=</span> <span class="p">[</span>    <span class="mi">54454</span><span class="p">,</span>  <span class="c1"># Simvastatin (Zocor)</span>
+            <span class="mi">54687</span><span class="p">,</span>  <span class="c1"># Pravastatin (Pravachol)</span>
+            <span class="mi">60823</span><span class="p">,</span>  <span class="c1"># Atorvastatin (Lipitor)</span>
+           <span class="mi">446155</span><span class="p">,</span>  <span class="c1"># Fluvastatin (Lescol)   </span>
+           <span class="mi">446157</span><span class="p">,</span>  <span class="c1"># Rosuvastatin (Crestor)</span>
+          <span class="mi">5282452</span><span class="p">,</span>  <span class="c1"># Pitavastatin (Livalo)</span>
+         <span class="mi">97938126</span> <span class="p">]</span> <span class="c1"># Lovastatin (Altoprev)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s get the SMILES strings from PubChem, generate Mol objects from them, and draw their chemical structures.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prolog</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+
+<span class="n">str_cid</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">])</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">str_cid</span> <span class="o">+</span> <span class="s2">&quot;/property/isomericsmiles/txt&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">smiles</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smiles</span> <span class="p">]</span>
+<span class="n">Chem</span><span class="o">.</span><span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/58342aeefcff0aa9ee2a457f7637290e1640e5d61b19988fd10d64e8ce0dc96f.png" src="_images/58342aeefcff0aa9ee2a457f7637290e1640e5d61b19988fd10d64e8ce0dc96f.png" />
+</div>
+</div>
+<p>Now generate MACCS keys for each compound.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataStructs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">MACCSkeys</span>
+
+<span class="n">fps</span> <span class="o">=</span> <span class="p">[</span> <span class="n">MACCSkeys</span><span class="o">.</span><span class="n">GenMACCSKeys</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mols</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s compute the pair-wise similarity scores among them.  To make higher scores easier to find, they are indicated with the “*” character(s).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+        
+        <span class="n">score</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">FingerprintSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;vs.&quot;</span><span class="p">,</span> <span class="n">cids</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.85</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ****&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ***&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.65</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; **&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.55</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; *&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54454 vs. 54687 : 0.812 ***
+54454 vs. 60823 : 0.354 
+54454 vs. 446155 : 0.379 
+54454 vs. 446157 : 0.307 
+54454 vs. 5282452 : 0.4 
+54454 vs. 97938126 : 0.867 ****
+54687 vs. 60823 : 0.387 
+54687 vs. 446155 : 0.397 
+54687 vs. 446157 : 0.287 
+54687 vs. 5282452 : 0.421 
+54687 vs. 97938126 : 0.8 ***
+60823 vs. 446155 : 0.662 **
+60823 vs. 446157 : 0.535 
+60823 vs. 5282452 : 0.507 
+60823 vs. 97938126 : 0.365 
+446155 vs. 446157 : 0.526 
+446155 vs. 5282452 : 0.735 **
+446155 vs. 97938126 : 0.393 
+446157 vs. 5282452 : 0.473 
+446157 vs. 97938126 : 0.298 
+5282452 vs. 97938126 : 0.444 
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, the similarity score is generated using the <strong>Tanimoto</strong> equation.  RDKit also supports other similarity metrics, including Dice, Cosine, Sokal, Russel, Kulczynski, McConnaughey, and Tversky.  The definition of these metrics is available at the LibreTexts page (<a class="reference external" href="https://bit.ly/2kx9NCd">https://bit.ly/2kx9NCd</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tanimoto    :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">TanimotoSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dice        :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">DiceSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cosine      :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">CosineSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sokal       :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">SokalSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;McConnaughey:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">McConnaugheySimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tanimoto    : 0.8125
+Dice        : 0.8966
+Cosine      : 0.8971
+Sokal       : 0.6842
+McConnaughey: 0.7952
+</pre></div>
+</div>
+</div>
+</div>
+<p>The Tversky score is an asymmetric similarity measure, and its computation requires the weightings of the two molecules being compared.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="p">:</span>
+    
+    <span class="n">alpha</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(alpha, beta) = (&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="s2">&quot;) : &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">TverskySimilarity</span><span class="p">(</span> <span class="n">fps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="p">),</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(alpha, beta) = ( 0.0 , 1.0 ) : 0.9286
+(alpha, beta) = ( 0.1 , 0.9 ) : 0.922
+(alpha, beta) = ( 0.2 , 0.8 ) : 0.9155
+(alpha, beta) = ( 0.3 , 0.7 ) : 0.9091
+(alpha, beta) = ( 0.4 , 0.6 ) : 0.9028
+(alpha, beta) = ( 0.5 , 0.5 ) : 0.8966
+(alpha, beta) = ( 0.6 , 0.4 ) : 0.8904
+(alpha, beta) = ( 0.7 , 0.3 ) : 0.8844
+(alpha, beta) = ( 0.8 , 0.2 ) : 0.8784
+(alpha, beta) = ( 0.9 , 0.1 ) : 0.8725
+(alpha, beta) = ( 1.0 , 0.0 ) : 0.8667
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 2a:</strong>  Compute the Tanimoto similarity scores between the seven compounds used in this section, using the PubChem fingerprints</p>
+<ul class="simple">
+<li><p>Download the PubChem Fingerprint for the seven CIDs.</p></li>
+<li><p>Convert the downloaded fingerprints into bit vectors.</p></li>
+<li><p>Compute the pair-wise Tanimoto scores using the bit vectors.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretation-of-similarity-scores">
+<h2>3. Interpretation of similarity scores<a class="headerlink" href="#interpretation-of-similarity-scores" title="Link to this heading">#</a></h2>
+<p>Using molecular fingeprints. we can compute the similarity scores between molecules.  However, how should these scores be interpreted?  For example, the Tanimoto score between CID 60823 and CID 446155 is computed to be 0.662, but does it mean that the two compounds are similar?  How similar is similar?  The following analysis would help answer these questions.</p>
+<p><strong>Step 1.</strong> Randomly select 1,000 compounds from PubChem and download their SMILES strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">cid_max</span> <span class="o">=</span> <span class="mi">138962044</span>    <span class="c1"># The maximum CID in PubChem as of September 2019</span>
+
+<span class="n">cids</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">cids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cid_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span> <span class="o">%</span> <span class="n">chunk_size</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="n">num_chunks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span> <span class="o">/</span> <span class="n">chunk_size</span> <span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">num_chunks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span> <span class="o">/</span> <span class="n">chunk_size</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">smiles</span> <span class="o">=</span> <span class="p">[]</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_chunks</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processing chunk &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    
+    <span class="n">idx1</span> <span class="o">=</span> <span class="n">chunk_size</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="n">idx2</span> <span class="o">=</span> <span class="n">chunk_size</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">str_cids</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">[</span><span class="n">idx1</span><span class="p">:</span><span class="n">idx2</span><span class="p">]])</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">str_cids</span> <span class="o">+</span> <span class="s2">&quot;/property/isomericsmiles/txt&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">smiles</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chunk&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;Failed to get SMILES.&quot;</span><span class="p">)</span>
+        
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of SMILES : &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">smiles</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing chunk 0 1 2 3 4 5 6 7 8 9 Done!
+# Number of SMILES :  1000
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 2.</strong> Generate the MACCSKeys for each compound.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smiles</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="kc">None</span> <span class="p">]</span>
+<span class="n">fps</span>  <span class="o">=</span> <span class="p">[</span> <span class="n">MACCSkeys</span><span class="o">.</span><span class="n">GenMACCSKeys</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mols</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="kc">None</span> <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of compounds:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mols</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of fingerprints:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># Number of compounds: 1000
+# Number of fingerprints: 1000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this cell if the number of compounds != the number of fingerprints.</span>
+<span class="c1">#if ( len(cids) != len(fps) ):</span>
+<span class="c1">#    print(&quot;SMILES at index&quot;, mols.index(None), &quot;:&quot;, smiles[ mols.index(None) ])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 3.</strong> Compute the Tanimoto scores between compounds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# The number of compound pairs:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># The number of compound pairs: 499500.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processing compound &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+        <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">FingerprintSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of scores : &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing compound 0 100 200 300 400 500 600 700 800 900 Done!
+# Number of scores :  499500
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 4.</strong> Generate a histogram that shows the distribution of the pair-wise scores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mybins</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span> <span class="o">*</span> <span class="mf">0.01</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">)]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">mybins</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cumulative Distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">mybins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mf">0.95</span><span class="p">,</span><span class="mf">0.95</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6d1312481c9a3a56fcff065d050d30c74d713e28f486dc861c9d08361ca1d86c.png" src="_images/6d1312481c9a3a56fcff065d050d30c74d713e28f486dc861c9d08361ca1d86c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span> <span class="p">:</span>
+
+    <span class="n">thresh</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">20</span>
+    <span class="n">num_similar_pairs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">scores</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">thresh</span><span class="p">])</span> 
+    <span class="n">prob</span> <span class="o">=</span> <span class="n">num_similar_pairs</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%8d</span><span class="s2"> (</span><span class="si">%8.4f</span><span class="s2"> </span><span class="si">%%</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">thresh</span><span class="p">,</span> <span class="n">num_similar_pairs</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">prob</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.000   499500 (100.0000 %)
+0.050   497010 ( 99.5015 %)
+0.100   488714 ( 97.8406 %)
+0.150   469193 ( 93.9325 %)
+0.200   435672 ( 87.2216 %)
+0.250   385198 ( 77.1167 %)
+0.300   318637 ( 63.7912 %)
+0.350   245621 ( 49.1734 %)
+0.400   175158 ( 35.0667 %)
+0.450   111668 ( 22.3560 %)
+0.500    66599 ( 13.3331 %)
+0.550    32209 (  6.4482 %)
+0.600    13897 (  2.7822 %)
+0.650     4668 (  0.9345 %)
+0.700     1351 (  0.2705 %)
+0.750      355 (  0.0711 %)
+0.800       76 (  0.0152 %)
+0.850       24 (  0.0048 %)
+0.900        6 (  0.0012 %)
+0.950        1 (  0.0002 %)
+1.000        0 (  0.0000 %)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average: 0.3488195436976387
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the distribution of the similarity scores among 1,000 compounds, we observe the following:<br></p>
+<ul class="simple">
+<li><p>If you randomly select two compounds from PubChem, the similarity score between them (computed using the Tanimoto equation and MACCS keys) is ~0.35 on average.</p></li>
+<li><p>About %5 of randomly selected compound pairs have a similarity score greater than 0.55.</p></li>
+<li><p>About %1 of randomly selected compound pairs have a similarity score greater than 0.65.</p></li>
+</ul>
+<p>If two compounds have a Tanimoto score of 0.35, it is close to the avaerage Tanimoto score between randomly selected compounds and there is a 50% chance that you will get a score of 0.35 or greater just by selecting two compounds from PubChem.  Therefore, it is reasonable to consider the two compounds are not similar.<br></p>
+<p>The Tanimoto index may have a value ranging from 0 (for no similarity) to 1 (for identical molecules) and the midpoint of this value range is 0.5.  Because of this, a Tanimoto score of <strong>0.55</strong> may not sound great enough to consider two compounds to be similar.  However, according to the score distribution curve generated here, only <strong>~5%</strong> of randomly selected compound pairs will have a score greater than this.<br></p>
+<p>In the previous section, we computed the similarity scores between some cholesterol-lowering drugs, and CID 60823 and CID 446155 had a Tanimoto score of <strong>0.662</strong>.  Based on the score distribution curve generated in the second section, we can say that the probablilty of two randomly selected compounds from PubChem having a Tanimoto score greater than 0.662 is <strong>less than 1%</strong>.</p>
+<p>The following code cell demonstrates how to find an appropriate similarity score threshold above which a given percentage of the compound pairs will be considered to be similar to each other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>    <span class="c1"># Sort the scores in an increasing order.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to find a threshold for top 3% compound pairs (i.e., 97% percentile)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# total compound pairs:   &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# 95</span><span class="si">% o</span><span class="s2">f compound pairs:  &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.97</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# score at 95% percentile:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span> <span class="nb">round</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.97</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># total compound pairs:    499500
+# 95% of compound pairs:   484515.0
+# score at 95% percentile: 0.5945945945945946
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 3a:</strong> In this exercise, we want to generate the distribution of the similarity scores among 1,000 compounds randomly selected from PubChem, using different molecular fingeprints and similarity metrics.<br>
+For molecular fingerprints, use the following:</p>
+<ul class="simple">
+<li><p>PubChem Fingerprint</p></li>
+<li><p>MACCS keys</p></li>
+<li><p>Morgan Fingerprint (ECFP4 analogue, 1024-bit-long)</p></li>
+</ul>
+<p>For similarity metrics, use the following:</p>
+<ul class="simple">
+<li><p>Tanimoto similarity</p></li>
+<li><p>Dice similarity</p></li>
+<li><p>Cosine similarity</p></li>
+</ul>
+<p>As a result, a total of 9 distribution curves need to be generated.</p>
+<p>Here are additional instructions to follow:</p>
+<ul class="simple">
+<li><p>When generating the histograms, bin the scores from 0 to 1 with an increment of 0.01.</p></li>
+<li><p>For each distribution curve, determine the similarity score threshold so that <strong>1%</strong> of the compound pairs have a similarity score greater than or equal to this threshold.</p></li>
+<li><p>Use RDKit to generate the MACCS keys and Morgan fingerprint and download the PubChem fingerprints from PubChem.</p></li>
+<li><p>For reproducibility, use <strong>random.seed(2019)</strong> before you generate random CIDs.</p></li>
+</ul>
+<p><strong>Step 1:</strong> Generate 1,000 random CIDs, download the isomeric SMILES for them, and create the RDKit mol objects from the downloaded SMILES strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 2:</strong>  Generate the fingerprints, compute the similarity scores, determine similarity thresholds, and make histograms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lecture05.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Structure Search</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fingerprint-generation">1. Fingerprint Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maccs-keys">1-(1) MACCS keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circular-fingerprints">1-(2) Circular Fingerprints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-based-fingeprints">1-(3) Path-Based Fingeprints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-fingerprint">1-(4) PubChem Fingerprint</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-similarity-scores">2. Computation of similarity scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-similarity-scores">3. Interpretation of similarity scores</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Belford et. al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
