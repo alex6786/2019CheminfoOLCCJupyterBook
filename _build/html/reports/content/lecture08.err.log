@@ -22,14 +22,32 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from sklearn.feature_selection import VarianceThreshold
+ncvs = 10
+
+max_depth_range         = np.linspace( 3, 7, num=5, dtype='int32' )
+min_samples_split_range = np.linspace( 3, 7, num=5, dtype='int32' )
+min_samples_leaf_range  = np.linspace( 2, 6, num=5, dtype='int32' )
+
+param_grid = dict( max_depth=max_depth_range,
+                   min_samples_split=min_samples_split_range,
+                   min_samples_leaf=min_samples_leaf_range )
+
+clf = GridSearchCV( DecisionTreeClassifier( random_state=0 ),
+                    param_grid=param_grid, cv=ncvs, scoring=scores, refit='roc_auc',
+                    return_train_score = True, iid=False)
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[46], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfeature_selection[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m VarianceThreshold
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[78], line 11[0m
+[1;32m      5[0m min_samples_leaf_range  [38;5;241m=[39m np[38;5;241m.[39mlinspace( [38;5;241m2[39m, [38;5;241m6[39m, num[38;5;241m=[39m[38;5;241m5[39m, dtype[38;5;241m=[39m[38;5;124m'[39m[38;5;124mint32[39m[38;5;124m'[39m )
+[1;32m      7[0m param_grid [38;5;241m=[39m [38;5;28mdict[39m( max_depth[38;5;241m=[39mmax_depth_range,
+[1;32m      8[0m                    min_samples_split[38;5;241m=[39mmin_samples_split_range,
+[1;32m      9[0m                    min_samples_leaf[38;5;241m=[39mmin_samples_leaf_range )
+[0;32m---> 11[0m clf [38;5;241m=[39m [43mGridSearchCV[49m[43m([49m[43m [49m[43mDecisionTreeClassifier[49m[43m([49m[43m [49m[43mrandom_state[49m[38;5;241;43m=[39;49m[38;5;241;43m0[39;49m[43m [49m[43m)[49m[43m,[49m
+[1;32m     12[0m [43m                    [49m[43mparam_grid[49m[38;5;241;43m=[39;49m[43mparam_grid[49m[43m,[49m[43m [49m[43mcv[49m[38;5;241;43m=[39;49m[43mncvs[49m[43m,[49m[43m [49m[43mscoring[49m[38;5;241;43m=[39;49m[43mscores[49m[43m,[49m[43m [49m[43mrefit[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mroc_auc[39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m     13[0m [43m                    [49m[43mreturn_train_score[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43miid[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m
 
-[0;31mModuleNotFoundError[0m: No module named 'sklearn'
+[0;31mTypeError[0m: __init__() got an unexpected keyword argument 'iid'
 
