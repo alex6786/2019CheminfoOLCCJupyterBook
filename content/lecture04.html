@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ca42572a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -703,7 +704,35 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c75d2d46ed160ebb96f16648e312076ff2fb308ebb29342068f072a240a23f04.png" src="../_images/c75d2d46ed160ebb96f16648e312076ff2fb308ebb29342068f072a240a23f04.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10:36:22] SMILES Parse Error: syntax error while parsing: Status:
+[10:36:22] SMILES Parse Error: check for mistakes around position 2:
+[10:36:22] Status:
+[10:36:22] ~^
+[10:36:22] SMILES Parse Error: Failed parsing SMILES &#39;Status:&#39; for input: &#39;Status:&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/1174/property/isomericsmiles/txt&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">img</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolToImage</span><span class="p">(</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">img</span>
+
+<span class="nn">File ~/Desktop/my-book-files/venv/lib64/python3.9/site-packages/rdkit/Chem/Draw/__init__.py:101,</span> in <span class="ni">MolToImage</span><span class="nt">(mol, size, kekulize, wedgeBonds, fitImage, options, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Returns a PIL image containing a drawing of the molecule</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd">     ARGUMENTS:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="sd">       a PIL Image object</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">mol</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">101</span>   <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Null molecule provided&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">rdMolDraw2D</span><span class="p">,</span> <span class="s1">&#39;MolDraw2DCairo&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>   <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;MolToImage requires that the RDKit be built with Cairo support&quot;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: Null molecule provided
+</pre></div>
+</div>
 </div>
 </div>
 <p>Alternatively, you can get the structure image of CID 1174 from PubChem.</p>
@@ -714,8 +743,6 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><img src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/1174/record/PNG?image_size=300x300"/></div></div>
 </div>
 <p><strong>Exercise 1a:</strong> The <strong>MolToSmiles()</strong> function used in <strong>Step 3</strong> generates the canonical SMILES string by default.  Read the RDKit manual about the arguments available for this function (<a class="reference external" href="https://www.rdkit.org/docs/source/rdkit.Chem.rdmolfiles.html">https://www.rdkit.org/docs/source/rdkit.Chem.rdmolfiles.html</a>) and write a code that generates non-canonical SMILES strings for the 360+ substance records associated with uracil (CID 1174).</p>
 <ul class="simple">

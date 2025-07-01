@@ -1,0 +1,5 @@
+/* Make code blocks scrollable */
+div.highlight pre {
+  max-height: 400px;   /* Adjust as needed */
+  overflow: auto;
+}
