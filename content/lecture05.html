@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -484,18 +484,43 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">prolog</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;rdkit&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Identity_type: same_stereo_isotope
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24726 &quot;C(/C=C/Cl)Cl&quot;
+</pre></div>
+</div>
+<img alt="../_images/9c2b48b5cc725bbc47f510b1e44e5135c658219149d753f16c65094f3fbe249a.png" src="../_images/9c2b48b5cc725bbc47f510b1e44e5135c658219149d753f16c65094f3fbe249a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Identity_type: same_stereo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24726 &quot;C(/C=C/Cl)Cl&quot;
+102602172 &quot;[2H]/C(=C(/[2H])\Cl)/C([2H])([2H])Cl&quot;
+169438232 &quot;C(/[13CH]=C/Cl)Cl&quot;
+</pre></div>
+</div>
+<img alt="../_images/231cfed303c29291c6a396c16976139a91e2456cf910816f972685611ead8673.png" src="../_images/231cfed303c29291c6a396c16976139a91e2456cf910816f972685611ead8673.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Identity_type: same_isotope
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24726 &quot;C(/C=C/Cl)Cl&quot;
+24883 &quot;C(C=CCl)Cl&quot;
+5280970 &quot;C(/C=C\Cl)Cl&quot;
+</pre></div>
+</div>
+<img alt="../_images/1f2f989bd740d597155fde841df5cc58ea5206b7f1f70ba73b0f9da843aa2da0.png" src="../_images/1f2f989bd740d597155fde841df5cc58ea5206b7f1f70ba73b0f9da843aa2da0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Identity_type: same_connectivity
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24726 &quot;C(/C=C/Cl)Cl&quot;
+24883 &quot;C(C=CCl)Cl&quot;
+5280970 &quot;C(/C=C\Cl)Cl&quot;
+102602172 &quot;[2H]/C(=C(/[2H])\Cl)/C([2H])([2H])Cl&quot;
+131875718 &quot;[2H]C(=C([2H])Cl)C([2H])([2H])Cl&quot;
+169438232 &quot;C(/[13CH]=C/Cl)Cl&quot;
+</pre></div>
+</div>
+<img alt="../_images/a83dbd1261bae323794c8041fa5c59b29f592c5d1f7ffba2826e9ec81681fd64.png" src="../_images/a83dbd1261bae323794c8041fa5c59b29f592c5d1f7ffba2826e9ec81681fd64.png" />
 </div>
 </div>
 <p><strong>Exercise 1a:</strong> Find compounds that has the same atom connectivity and isotope information as the query molecule.</p>
@@ -538,6 +563,12 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># Number of CIDs: 37
+[&#39;9875401&#39;, &#39;6433119&#39;, &#39;11524901&#39;, &#39;25255944&#39;, &#39;25164166&#39;, &#39;25190310&#39;, &#39;56589668&#39;, &#39;56598114&#39;, &#39;68152323&#39;, &#39;123868009&#39;, &#39;143433422&#39;, &#39;144489887&#39;, &#39;145624236&#39;, &#39;145624246&#39;, &#39;154630277&#39;, &#39;159596345&#39;, &#39;11994745&#39;, &#39;25190129&#39;, &#39;25190130&#39;, &#39;25190186&#39;, &#39;25190187&#39;, &#39;25190188&#39;, &#39;25190189&#39;, &#39;25190190&#39;, &#39;25190248&#39;, &#39;25190249&#39;, &#39;25190250&#39;, &#39;25190251&#39;, &#39;25190252&#39;, &#39;25190311&#39;, &#39;25255845&#39;, &#39;25255945&#39;, &#39;25255946&#39;, &#39;49849874&#39;, &#39;133687098&#39;, &#39;156594383&#39;, &#39;169435566&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <p>It is worth mentioning that the parameter name “Threshold” is <strong>case-sensitive</strong>.  If “threshold” is used (rather than “Threshold”), it will be ignored and the default value (0.90) will be used for the parameter.  [As a matter of fact, all optional parameter names in PUG-REST are case-sensitive.]</p>
 <div class="cell docutils container">
@@ -554,6 +585,11 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># Number of CIDs: 220 vs. 1015
+</pre></div>
+</div>
+</div>
 </div>
 <p>It is possible to run 3-D similarity search using PUG-REST.  However, because 3-D similarity search takes much longer than 2-D similarity search, it often exceeds the 30-second time limit and returns a time-out error, especially when the query molecule is big.</p>
 <p>In addition, for 3-D similarity search, it is <strong>not</strong> possible to adjust the similarity threshold (that is, the optional “Threshold” parameter does not work).  3-D similarity search uses a shape-Tanimoto (ST) of &gt;=0.80 and a color-Tanimoto (CT) of &gt;=0.50 as a similarity threshold.  Read the libreTexts page for more details (<a class="reference external" href="https://bit.ly/2lPznCo">https://bit.ly/2lPznCo</a>).</p>
@@ -564,6 +600,11 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">)</span>
 <span class="n">cids</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3713
 </pre></div>
 </div>
 </div>
@@ -606,6 +647,11 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># Number of CIDs: 25875
+</pre></div>
+</div>
+</div>
 </div>
 <p>An important thing to remember about substructure search is that, if the query structure is not specific enough (that is, not big enough), it will return too many hits for the PubChem server can handle.  For example, if you perform substructure search using the “C-C” as a query, it will give you an error, because PubChem has ~96 million (organic) compounds with more than two carbon atoms and most of them will have the “C-C” unit. Therefore, if you get an “time-out” error while doing substructure search, consider providing more specific structure as an input query.</p>
 <p><strong>Exercise 3a:</strong> Below is the SMILES string for a HCV (Hepatitis C Virus) drug (Sovaldi).  Perform substructure search using this SMILES string as a query, identify compounds that are mentioned in patent documents, and create a list of the patent documents that mentioning them.</p>
@@ -644,6 +690,11 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># Number of CIDs: 211
+</pre></div>
+</div>
+</div>
 </div>
 <p>It is possible to allow other elements to be present in addition to those specified by the query formula, as shown in the following example.</p>
 <div class="cell docutils container">
@@ -653,6 +704,11 @@ Note: To use the python code in this lesson plan, RDKit must be installed on the
 <span class="n">cids</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of CIDs:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">))</span>
 <span class="c1">#print(cids)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># Number of CIDs: 236
 </pre></div>
 </div>
 </div>
