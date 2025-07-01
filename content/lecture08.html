@@ -439,18 +439,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://pubchem.ncbi.nlm.nih.gov/assay/pcget.cgi?query=download&amp;record_type=datatable&amp;actvty=all&amp;response_type=save&amp;aid=743139&#39;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -480,6 +468,7 @@ document.write(`
       <th>PUBCHEM_RESULT_TAG</th>
       <th>PUBCHEM_SID</th>
       <th>PUBCHEM_CID</th>
+      <th>PUBCHEM_EXT_DATASOURCE_SMILES</th>
       <th>PUBCHEM_ACTIVITY_OUTCOME</th>
       <th>PUBCHEM_ACTIVITY_SCORE</th>
       <th>PUBCHEM_ACTIVITY_URL</th>
@@ -504,6 +493,7 @@ document.write(`
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
       <td>STRING</td>
       <td>STRING</td>
       <td>FLOAT</td>
@@ -516,6 +506,7 @@ document.write(`
     <tr>
       <th>1</th>
       <td>RESULT_DESCR</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -542,6 +533,7 @@ document.write(`
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
       <td>MICROMOLAR</td>
       <td>PERCENT</td>
       <td>NaN</td>
@@ -554,6 +546,7 @@ document.write(`
       <td>1</td>
       <td>144203552.0</td>
       <td>12850184.0</td>
+      <td>C(C(=O)[C@H]([C@@H]([C@H](C(=O)[O-])O)O)O)O.C(...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -572,6 +565,7 @@ document.write(`
       <td>2</td>
       <td>144203553.0</td>
       <td>89753.0</td>
+      <td>C([C@H]([C@H]([C@@H]([C@H](C(=O)[O-])O)O)O)O)O...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -590,6 +584,7 @@ document.write(`
       <td>3</td>
       <td>144203554.0</td>
       <td>9403.0</td>
+      <td>C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2OC(=O)CCC...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -608,6 +603,7 @@ document.write(`
       <td>4</td>
       <td>144203555.0</td>
       <td>13218779.0</td>
+      <td>C[C@@]12CC[C@@H](C1(C)C)C[C@H]2OC(=O)CSC#N</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -655,6 +651,7 @@ document.write(`
       <th>PUBCHEM_RESULT_TAG</th>
       <th>PUBCHEM_SID</th>
       <th>PUBCHEM_CID</th>
+      <th>PUBCHEM_EXT_DATASOURCE_SMILES</th>
       <th>PUBCHEM_ACTIVITY_OUTCOME</th>
       <th>PUBCHEM_ACTIVITY_SCORE</th>
       <th>PUBCHEM_ACTIVITY_URL</th>
@@ -675,6 +672,7 @@ document.write(`
       <td>1</td>
       <td>144203552.0</td>
       <td>12850184.0</td>
+      <td>C(C(=O)[C@H]([C@@H]([C@H](C(=O)[O-])O)O)O)O.C(...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -693,6 +691,7 @@ document.write(`
       <td>2</td>
       <td>144203553.0</td>
       <td>89753.0</td>
+      <td>C([C@H]([C@H]([C@@H]([C@H](C(=O)[O-])O)O)O)O)O...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -711,6 +710,7 @@ document.write(`
       <td>3</td>
       <td>144203554.0</td>
       <td>9403.0</td>
+      <td>C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2OC(=O)CCC...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -729,6 +729,7 @@ document.write(`
       <td>4</td>
       <td>144203555.0</td>
       <td>13218779.0</td>
+      <td>C[C@@]12CC[C@@H](C1(C)C)C[C@H]2OC(=O)CSC#N</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -747,6 +748,7 @@ document.write(`
       <td>5</td>
       <td>144203556.0</td>
       <td>142766.0</td>
+      <td>C1=CC=C(C(=C1)C(=O)O)O.C1=CC2=C(C(=C1)O)N=CC=C2</td>
       <td>Inconclusive</td>
       <td>25.0</td>
       <td>NaN</td>
@@ -773,11 +775,12 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;PUBCHEM_RESULT_TAG&#39;, &#39;PUBCHEM_SID&#39;, &#39;PUBCHEM_CID&#39;,
-       &#39;PUBCHEM_ACTIVITY_OUTCOME&#39;, &#39;PUBCHEM_ACTIVITY_SCORE&#39;,
-       &#39;PUBCHEM_ACTIVITY_URL&#39;, &#39;PUBCHEM_ASSAYDATA_COMMENT&#39;, &#39;Activity Summary&#39;,
-       &#39;Antagonist Activity&#39;, &#39;Antagonist Potency (uM)&#39;,
-       &#39;Antagonist Efficacy (%)&#39;, &#39;Viability Activity&#39;,
-       &#39;Viability Potency (uM)&#39;, &#39;Viability Efficacy (%)&#39;, &#39;Sample Source&#39;],
+       &#39;PUBCHEM_EXT_DATASOURCE_SMILES&#39;, &#39;PUBCHEM_ACTIVITY_OUTCOME&#39;,
+       &#39;PUBCHEM_ACTIVITY_SCORE&#39;, &#39;PUBCHEM_ACTIVITY_URL&#39;,
+       &#39;PUBCHEM_ASSAYDATA_COMMENT&#39;, &#39;Activity Summary&#39;, &#39;Antagonist Activity&#39;,
+       &#39;Antagonist Potency (uM)&#39;, &#39;Antagonist Efficacy (%)&#39;,
+       &#39;Viability Activity&#39;, &#39;Viability Potency (uM)&#39;,
+       &#39;Viability Efficacy (%)&#39;, &#39;Sample Source&#39;],
       dtype=&#39;object&#39;)
 </pre></div>
 </div>
@@ -812,11 +815,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;pc_result_tag&#39;, &#39;sid&#39;, &#39;cid&#39;, &#39;activity_outcome&#39;, &#39;activity_score&#39;,
-       &#39;activity_url&#39;, &#39;assay_data_comment&#39;, &#39;activity_summary&#39;,
-       &#39;antagonist_activity&#39;, &#39;antagonist_potency&#39;, &#39;antagonist_efficacy&#39;,
-       &#39;viability_activity&#39;, &#39;viability_potency&#39;, &#39;viability_efficacy&#39;,
-       &#39;sample_source&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;pc_result_tag&#39;, &#39;sid&#39;, &#39;cid&#39;, &#39;PUBCHEM_EXT_DATASOURCE_SMILES&#39;,
+       &#39;activity_outcome&#39;, &#39;activity_score&#39;, &#39;activity_url&#39;,
+       &#39;assay_data_comment&#39;, &#39;activity_summary&#39;, &#39;antagonist_activity&#39;,
+       &#39;antagonist_potency&#39;, &#39;antagonist_efficacy&#39;, &#39;viability_activity&#39;,
+       &#39;viability_potency&#39;, &#39;viability_efficacy&#39;, &#39;sample_source&#39;],
       dtype=&#39;object&#39;)
 </pre></div>
 </div>
@@ -854,6 +857,7 @@ document.write(`
       <th>pc_result_tag</th>
       <th>sid</th>
       <th>cid</th>
+      <th>PUBCHEM_EXT_DATASOURCE_SMILES</th>
       <th>activity_score</th>
       <th>activity_url</th>
       <th>assay_data_comment</th>
@@ -882,6 +886,7 @@ document.write(`
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -889,6 +894,7 @@ document.write(`
       <th>Active</th>
       <td>379</td>
       <td>379</td>
+      <td>378</td>
       <td>378</td>
       <td>379</td>
       <td>0</td>
@@ -907,6 +913,7 @@ document.write(`
       <td>7562</td>
       <td>7562</td>
       <td>7466</td>
+      <td>7466</td>
       <td>7562</td>
       <td>0</td>
       <td>0</td>
@@ -923,6 +930,7 @@ document.write(`
       <th>Inconclusive</th>
       <td>2545</td>
       <td>2545</td>
+      <td>2493</td>
       <td>2493</td>
       <td>2545</td>
       <td>0</td>
@@ -970,6 +978,7 @@ document.write(`
       <th>pc_result_tag</th>
       <th>sid</th>
       <th>cid</th>
+      <th>PUBCHEM_EXT_DATASOURCE_SMILES</th>
       <th>activity_score</th>
       <th>activity_url</th>
       <th>assay_data_comment</th>
@@ -997,6 +1006,7 @@ document.write(`
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -1005,6 +1015,7 @@ document.write(`
       <th>active antagonist</th>
       <td>379</td>
       <td>379</td>
+      <td>378</td>
       <td>378</td>
       <td>379</td>
       <td>0</td>
@@ -1023,6 +1034,7 @@ document.write(`
       <td>7562</td>
       <td>7562</td>
       <td>7466</td>
+      <td>7466</td>
       <td>7562</td>
       <td>0</td>
       <td>0</td>
@@ -1040,6 +1052,7 @@ document.write(`
       <td>612</td>
       <td>612</td>
       <td>571</td>
+      <td>571</td>
       <td>612</td>
       <td>0</td>
       <td>0</td>
@@ -1053,6 +1066,7 @@ document.write(`
     </tr>
     <tr>
       <th>inconclusive</th>
+      <td>44</td>
       <td>44</td>
       <td>44</td>
       <td>44</td>
@@ -1072,6 +1086,7 @@ document.write(`
       <td>414</td>
       <td>414</td>
       <td>409</td>
+      <td>409</td>
       <td>414</td>
       <td>0</td>
       <td>0</td>
@@ -1085,6 +1100,7 @@ document.write(`
     </tr>
     <tr>
       <th>inconclusive agonist (cytotoxic)</th>
+      <td>59</td>
       <td>59</td>
       <td>59</td>
       <td>59</td>
@@ -1104,6 +1120,7 @@ document.write(`
       <td>367</td>
       <td>367</td>
       <td>364</td>
+      <td>364</td>
       <td>367</td>
       <td>0</td>
       <td>0</td>
@@ -1119,6 +1136,7 @@ document.write(`
       <th>inconclusive antagonist (cytotoxic)</th>
       <td>1049</td>
       <td>1049</td>
+      <td>1046</td>
       <td>1046</td>
       <td>1049</td>
       <td>0</td>
@@ -1181,7 +1199,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8553
-6864
+6858
 </pre></div>
 </div>
 </div>
@@ -1200,21 +1218,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pc_result_tag             0
-sid                       0
-cid                     138
-activity_outcome          0
-activity_score            0
-activity_url           8553
-assay_data_comment     8553
-activity_summary          0
-antagonist_activity       0
-antagonist_potency     7563
-antagonist_efficacy       0
-viability_activity        0
-viability_potency      8054
-viability_efficacy      155
-sample_source             0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pc_result_tag                       0
+sid                                 0
+cid                               138
+PUBCHEM_EXT_DATASOURCE_SMILES     138
+activity_outcome                    0
+activity_score                      0
+activity_url                     8553
+assay_data_comment               8553
+activity_summary                    0
+antagonist_activity                 0
+antagonist_potency               7563
+antagonist_efficacy                 0
+viability_activity                  0
+viability_potency                8054
+viability_efficacy                155
+sample_source                       0
 dtype: int64
 </pre></div>
 </div>
@@ -1243,7 +1262,7 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8415
-6863
+6857
 </pre></div>
 </div>
 </div>
@@ -1255,21 +1274,22 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pc_result_tag             0
-sid                       0
-cid                       0
-activity_outcome          0
-activity_score            0
-activity_url           8415
-assay_data_comment     8415
-activity_summary          0
-antagonist_activity       0
-antagonist_potency     7467
-antagonist_efficacy       0
-viability_activity        0
-viability_potency      7919
-viability_efficacy      154
-sample_source             0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pc_result_tag                       0
+sid                                 0
+cid                                 0
+PUBCHEM_EXT_DATASOURCE_SMILES       0
+activity_outcome                    0
+activity_score                      0
+activity_url                     8415
+assay_data_comment               8415
+activity_summary                    0
+antagonist_activity                 0
+antagonist_potency               7467
+antagonist_efficacy                 0
+viability_activity                  0
+viability_potency                7919
+viability_efficacy                154
+sample_source                       0
 dtype: int64
 </pre></div>
 </div>
@@ -1299,7 +1319,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># 65 CIDs with conflicting activities [associated with 146 rows (SIDs).]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># 66 CIDs with conflicting activities [associated with 150 rows (SIDs).]
 </pre></div>
 </div>
 </div>
@@ -1332,6 +1352,7 @@ dtype: int64
       <th>pc_result_tag</th>
       <th>sid</th>
       <th>cid</th>
+      <th>PUBCHEM_EXT_DATASOURCE_SMILES</th>
       <th>activity_outcome</th>
       <th>activity_score</th>
       <th>activity_url</th>
@@ -1352,6 +1373,7 @@ dtype: int64
       <td>6</td>
       <td>144203557.0</td>
       <td>16043.0</td>
+      <td>CC(C)(C)C1=C(C=CC(=C1)O)O</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -1370,6 +1392,7 @@ dtype: int64
       <td>5954</td>
       <td>144209507.0</td>
       <td>16043.0</td>
+      <td>CC(C)(C)C1=C(C=CC(=C1)O)O</td>
       <td>Active</td>
       <td>43.0</td>
       <td>NaN</td>
@@ -1388,6 +1411,7 @@ dtype: int64
       <td>6848</td>
       <td>144210401.0</td>
       <td>16043.0</td>
+      <td>CC(C)(C)C1=C(C=CC(=C1)O)O</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -1406,6 +1430,7 @@ dtype: int64
       <td>50</td>
       <td>144203601.0</td>
       <td>443939.0</td>
+      <td>C[C@H]1[C@H]([C@H](C[C@@H](O1)O[C@H]2C[C@@](CC...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -1424,6 +1449,7 @@ dtype: int64
       <td>6128</td>
       <td>144209681.0</td>
       <td>443939.0</td>
+      <td>C[C@H]1[C@H]([C@H](C[C@@H](O1)O[C@H]2C[C@@](CC...</td>
       <td>Active</td>
       <td>61.0</td>
       <td>NaN</td>
@@ -1442,6 +1468,7 @@ dtype: int64
       <td>64</td>
       <td>144203615.0</td>
       <td>2170.0</td>
+      <td>C1CN(CCN1)C2=NC3=CC=CC=C3OC4=C2C=C(C=C4)Cl</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -1460,6 +1487,7 @@ dtype: int64
       <td>9116</td>
       <td>144212669.0</td>
       <td>2170.0</td>
+      <td>C1CN(CCN1)C2=NC3=CC=CC=C3OC4=C2C=C(C=C4)Cl</td>
       <td>Active</td>
       <td>50.0</td>
       <td>NaN</td>
@@ -1478,6 +1506,7 @@ dtype: int64
       <td>104</td>
       <td>144203655.0</td>
       <td>2554.0</td>
+      <td>C1=CC=C2C(=C1)C=CC3=CC=CC=C3N2C(=O)N</td>
       <td>Inconclusive</td>
       <td>20.0</td>
       <td>NaN</td>
@@ -1496,6 +1525,7 @@ dtype: int64
       <td>5918</td>
       <td>144209471.0</td>
       <td>2554.0</td>
+      <td>C1=CC=C2C(=C1)C=CC3=CC=CC=C3N2C(=O)N</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -1514,6 +1544,7 @@ dtype: int64
       <td>6962</td>
       <td>144210515.0</td>
       <td>2554.0</td>
+      <td>C1=CC=C2C(=C1)C=CC3=CC=CC=C3N2C(=O)N</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -1566,6 +1597,7 @@ dtype: int64
       <th>pc_result_tag</th>
       <th>sid</th>
       <th>cid</th>
+      <th>PUBCHEM_EXT_DATASOURCE_SMILES</th>
       <th>activity_outcome</th>
       <th>activity_score</th>
       <th>activity_url</th>
@@ -1594,11 +1626,13 @@ dtype: int64
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>active agonist</th>
+      <td>537</td>
       <td>537</td>
       <td>537</td>
       <td>537</td>
@@ -1616,37 +1650,39 @@ dtype: int64
     </tr>
     <tr>
       <th>active antagonist</th>
-      <td>343</td>
-      <td>343</td>
-      <td>343</td>
-      <td>343</td>
-      <td>343</td>
-      <td>0</td>
-      <td>0</td>
-      <td>343</td>
       <td>342</td>
-      <td>343</td>
-      <td>343</td>
+      <td>342</td>
+      <td>342</td>
+      <td>342</td>
+      <td>342</td>
+      <td>342</td>
+      <td>0</td>
+      <td>0</td>
+      <td>342</td>
+      <td>341</td>
+      <td>342</td>
+      <td>342</td>
       <td>108</td>
       <td>326</td>
-      <td>343</td>
+      <td>342</td>
     </tr>
     <tr>
       <th>inactive</th>
-      <td>7389</td>
-      <td>7389</td>
-      <td>7389</td>
-      <td>7389</td>
-      <td>7389</td>
+      <td>7386</td>
+      <td>7386</td>
+      <td>7386</td>
+      <td>7386</td>
+      <td>7386</td>
+      <td>7386</td>
       <td>0</td>
       <td>0</td>
-      <td>7389</td>
+      <td>7386</td>
       <td>0</td>
-      <td>7389</td>
-      <td>7389</td>
+      <td>7386</td>
+      <td>7386</td>
       <td>318</td>
-      <td>7278</td>
-      <td>7389</td>
+      <td>7275</td>
+      <td>7386</td>
     </tr>
   </tbody>
 </table>
@@ -1660,8 +1696,8 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8269
-6798
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8265
+6791
 </pre></div>
 </div>
 </div>
@@ -1679,8 +1715,8 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6798
-6798
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6791
+6791
 </pre></div>
 </div>
 </div>
@@ -1731,6 +1767,7 @@ In this practice, the input (molecular structure) will be represented with binar
       <th>pc_result_tag</th>
       <th>sid</th>
       <th>cid</th>
+      <th>PUBCHEM_EXT_DATASOURCE_SMILES</th>
       <th>activity_outcome</th>
       <th>activity_score</th>
       <th>activity_url</th>
@@ -1752,6 +1789,7 @@ In this practice, the input (molecular structure) will be represented with binar
       <td>1</td>
       <td>144203552.0</td>
       <td>12850184.0</td>
+      <td>C(C(=O)[C@H]([C@@H]([C@H](C(=O)[O-])O)O)O)O.C(...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -1771,6 +1809,7 @@ In this practice, the input (molecular structure) will be represented with binar
       <td>2</td>
       <td>144203553.0</td>
       <td>89753.0</td>
+      <td>C([C@H]([C@H]([C@@H]([C@H](C(=O)[O-])O)O)O)O)O...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -1790,6 +1829,7 @@ In this practice, the input (molecular structure) will be represented with binar
       <td>3</td>
       <td>144203554.0</td>
       <td>9403.0</td>
+      <td>C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2OC(=O)CCC...</td>
       <td>Inactive</td>
       <td>0.0</td>
       <td>NaN</td>
@@ -1837,6 +1877,7 @@ In this practice, the input (molecular structure) will be represented with binar
       <th>pc_result_tag</th>
       <th>sid</th>
       <th>cid</th>
+      <th>PUBCHEM_EXT_DATASOURCE_SMILES</th>
       <th>activity_outcome</th>
       <th>activity_score</th>
       <th>activity_url</th>
@@ -1867,11 +1908,13 @@ In this practice, the input (molecular structure) will be represented with binar
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>active agonist</th>
+      <td>451</td>
       <td>451</td>
       <td>451</td>
       <td>451</td>
@@ -1890,39 +1933,41 @@ In this practice, the input (molecular structure) will be represented with binar
     </tr>
     <tr>
       <th>active antagonist</th>
-      <td>291</td>
-      <td>291</td>
-      <td>291</td>
-      <td>291</td>
-      <td>291</td>
-      <td>0</td>
-      <td>0</td>
-      <td>291</td>
       <td>290</td>
-      <td>291</td>
-      <td>291</td>
+      <td>290</td>
+      <td>290</td>
+      <td>290</td>
+      <td>290</td>
+      <td>290</td>
+      <td>0</td>
+      <td>0</td>
+      <td>290</td>
+      <td>289</td>
+      <td>290</td>
+      <td>290</td>
       <td>88</td>
       <td>275</td>
-      <td>291</td>
-      <td>291</td>
+      <td>290</td>
+      <td>290</td>
     </tr>
     <tr>
       <th>inactive</th>
-      <td>6056</td>
-      <td>6056</td>
-      <td>6056</td>
-      <td>6056</td>
-      <td>6056</td>
+      <td>6050</td>
+      <td>6050</td>
+      <td>6050</td>
+      <td>6050</td>
+      <td>6050</td>
+      <td>6050</td>
       <td>0</td>
       <td>0</td>
-      <td>6056</td>
+      <td>6050</td>
       <td>0</td>
-      <td>6056</td>
-      <td>6056</td>
+      <td>6050</td>
+      <td>6050</td>
       <td>269</td>
-      <td>5970</td>
-      <td>6056</td>
-      <td>6056</td>
+      <td>5964</td>
+      <td>6050</td>
+      <td>6050</td>
     </tr>
   </tbody>
 </table>
@@ -1956,6 +2001,7 @@ In this practice, the input (molecular structure) will be represented with binar
       <th>pc_result_tag</th>
       <th>sid</th>
       <th>cid</th>
+      <th>PUBCHEM_EXT_DATASOURCE_SMILES</th>
       <th>activity_outcome</th>
       <th>activity_score</th>
       <th>activity_url</th>
@@ -1986,44 +2032,47 @@ In this practice, the input (molecular structure) will be represented with binar
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>6056</td>
-      <td>6056</td>
-      <td>6056</td>
-      <td>6056</td>
-      <td>6056</td>
+      <td>6050</td>
+      <td>6050</td>
+      <td>6050</td>
+      <td>6050</td>
+      <td>6050</td>
+      <td>6050</td>
       <td>0</td>
       <td>0</td>
-      <td>6056</td>
-      <td>6056</td>
+      <td>6050</td>
+      <td>6050</td>
       <td>0</td>
-      <td>6056</td>
-      <td>6056</td>
+      <td>6050</td>
+      <td>6050</td>
       <td>269</td>
-      <td>5970</td>
-      <td>6056</td>
+      <td>5964</td>
+      <td>6050</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>742</td>
-      <td>742</td>
-      <td>742</td>
-      <td>742</td>
-      <td>742</td>
-      <td>0</td>
-      <td>0</td>
-      <td>742</td>
-      <td>742</td>
       <td>741</td>
-      <td>742</td>
-      <td>742</td>
+      <td>741</td>
+      <td>741</td>
+      <td>741</td>
+      <td>741</td>
+      <td>741</td>
+      <td>0</td>
+      <td>0</td>
+      <td>741</td>
+      <td>741</td>
+      <td>740</td>
+      <td>741</td>
+      <td>741</td>
       <td>132</td>
       <td>707</td>
-      <td>742</td>
+      <td>741</td>
     </tr>
   </tbody>
 </table>
@@ -2126,7 +2175,7 @@ In this practice, the input (molecular structure) will be represented with binar
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># CIDs =  6798
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># CIDs =  6791
 # CID Chunks =  34 (chunked by  200 )
 </pre></div>
 </div>
@@ -2167,12 +2216,24 @@ In this practice, the input (molecular structure) will be represented with binar
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing Chunk  0
-Processing Chunk  5
-Processing Chunk  10
-Processing Chunk  15
-Processing Chunk  20
-Processing Chunk  25
-Processing Chunk  30
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing Chunk  5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing Chunk  10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing Chunk  15
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing Chunk  20
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing Chunk  25
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing Chunk  30
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2234,7 +2295,7 @@ Processing Chunk  30
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6798
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6791
 </pre></div>
 </div>
 </div>
@@ -2326,8 +2387,7 @@ Processing Chunk  30
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Can&#39;t generate MOL object: CID 28145 [NH4+].[NH4+].F[Si-2](F)(F)(F)(F)F
-Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18:02:11] WARNING: not removing hydrogen atom without neighbors
 </pre></div>
 </div>
 </div>
@@ -2756,57 +2816,9 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>2293</th>
-      <td>28145.0</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>9077</th>
-      <td>28127.0</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
   </tbody>
 </table>
-<p>2 rows × 169 columns</p>
+<p>0 rows × 169 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -2817,7 +2829,7 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6796
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6791
 </pre></div>
 </div>
 </div>
@@ -3104,10 +3116,10 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6796
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6791
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>742
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(741)
 </pre></div>
 </div>
 </div>
@@ -3119,6 +3131,16 @@ Can&#39;t generate MOL object: CID 28127 F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">VarianceThreshold</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">46</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">VarianceThreshold</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
